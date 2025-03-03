@@ -75,8 +75,8 @@ show variables like 'server_id'; # 查看server_id
 
 show master status; # 查看主库的binlog信息
 ```
-![主数据库]('/public/images/blog/mysql-sync/master.png')
 
+![主数据库](/public/images/blog/mysql-sync/master.png)
 
 从数据库
 
@@ -105,6 +105,6 @@ start slave;
 show slave status; # 查询 Slave 状态
 ```
 
-![成功]('/public/images/blog/mysql-sync/success.png')
+![成功](/public/images/blog/mysql-sync/success.png)
 
 **注意: 从库设置时，一定不能使用本地环回地址，这样会出现主从同步失败(Connecting 状态 是个坑)**
