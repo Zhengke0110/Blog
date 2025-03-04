@@ -1,0 +1,1 @@
+import{_ as s}from"./Post.c5de4ba2.js";import{u as n,c as r,w as m,o as c,a as _}from"./app.1691700c.js";const i=[],x={__name:"notes",setup(p,{expose:a}){const t={meta:[]};return a({frontmatter:t}),n({meta:[]}),(f,e)=>{const o=s;return c(),r(o,{frontmatter:t},{default:m(()=>e[0]||(e[0]=[_("div",{class:"prose m-auto"},null,-1)])),_:1})}}};export{x as default,i as meta};
