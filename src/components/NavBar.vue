@@ -21,7 +21,9 @@ import { isDark } from "~/logics";
         </router-link>
 
         <router-link to="/talks" class="lt-md:hidden"> Talks </router-link>
+        <router-link to="/records" class="lt-md:hidden"> Records </router-link>
 
+        
         <!-- <router-link to="/algorithm" title="DS">
           <span class="lt-md:hidden">Algorithm</span>
           <ri-ball-pen-line class="md:hidden" />

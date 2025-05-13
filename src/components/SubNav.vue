@@ -16,6 +16,13 @@
       >
         Talks
       </router-link>
+            <router-link
+        to="/records"
+        class="!border-none !font-400"
+        :class="route.path === '/records' ? '' : inactiveStyle"
+      >
+        Records
+      </router-link>
     </div>
   </div>
 </template>
