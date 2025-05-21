@@ -78,3 +78,15 @@ docker pull apache/kafka:3.9.0
 
 docker run --privileged=true --net=bridge -d --name=kafka-kraft -v D:/Service/kafka-kraft/data:/var/lib/kafka/data -v D:/Service/kafka-kraft/config:/mnt/shared/config -v D:/Service/kafka-kraft/secrets:/etc/kafka/secrets -p 9092:9092 -p 9093:9093 -e TZ=Asia/Shanghai -e LANG=C.UTF-8 -e KAFKA_NODE_ID=1 -e CLUSTER_ID=kafka-cluster -e KAFKA_PROCESS_ROLES=broker,controller -e KAFKA_INTER_BROKER_LISTENER_NAME=PLAINTEXT -e KAFKA_CONTROLLER_LISTENER_NAMES=CONTROLLER -e KAFKA_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9093 -e KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://192.168.0.103:9092 -e KAFKA_CONTROLLER_QUORUM_VOTERS=1@localhost:9093 apache/kafka:3.9.0
 ```
+## Kafka
+
+```bash
+
+docker pull wurstmeister/zookeeper
+docker pull wurstmeister/kafka
+
+docker run -d --name zookeeper -p 2181 -t wurstmeister/zookeeper
+
+docker run -d --name kafka --publish 9092:9092 --link zookeeper --env KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181 --env KAFKA_ADVERTISED_HOST_NAME=127.0.0.1 --env KAFKA_ADVERTISED_PORT=9092 wurstmeister/kafka:latest
+
+```
