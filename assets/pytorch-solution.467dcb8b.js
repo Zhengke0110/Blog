@@ -1,0 +1,10 @@
+import{_ as r}from"./Post.f2c29d1d.js";import{u as c,c as l,w as p,o as i,a as e,b as t}from"./app.a7d48e3d.js";const b="\u8BB0\u5F55Pytorch\u7B49\u4F7F\u7528Bug",y="2025-05-28T00:00:00.000Z",f="record",_=[{property:"og:title",content:"\u8BB0\u5F55Pytorch\u7B49\u4F7F\u7528Bug"}],k={__name:"pytorch-solution",setup(u,{expose:o}){const s={title:"\u8BB0\u5F55Pytorch\u7B49\u4F7F\u7528Bug",date:"2025-05-28T00:00:00.000Z",type:"record",meta:[{property:"og:title",content:"\u8BB0\u5F55Pytorch\u7B49\u4F7F\u7528Bug"}]};return o({frontmatter:s}),c({title:"\u8BB0\u5F55Pytorch\u7B49\u4F7F\u7528Bug",meta:[{property:"og:title",content:"\u8BB0\u5F55Pytorch\u7B49\u4F7F\u7528Bug"}]}),(h,a)=>{const n=r;return i(),l(n,{frontmatter:s},{default:p(()=>a[0]||(a[0]=[e("div",{class:"prose m-auto"},[e("h1",{id:"win11-\u4E0B-d2l-\u5B89\u88C5\u62A5\u9519\u89E3\u51B3",tabindex:"-1"},[t("Win11 \u4E0B d2l \u5B89\u88C5\u62A5\u9519\u89E3\u51B3 "),e("a",{class:"header-anchor",href:"#win11-\u4E0B-d2l-\u5B89\u88C5\u62A5\u9519\u89E3\u51B3","aria-hidden":"true"},"#")]),e("pre",{class:"language-bash"},[e("code",{class:"language-bash"},[e("span",{class:"token punctuation"},".."),t(`.
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+error: subprocess-exited-with-error
+
+\xD7 Getting requirements to build wheel did not run successfully.
+\u2502 `),e("span",{class:"token builtin class-name"},"exit"),t(" code: "),e("span",{class:"token number"},"1"),t(`
+\u2570\u2500`),e("span",{class:"token operator"},">"),t(" See above "),e("span",{class:"token keyword"},"for"),t(` output.
+
+`)])]),e("p",null,"\u4E34\u65F6\u89E3\u51B3\u65B9\u6848:"),e("pre",{class:"language-bash"},[e("code",{class:"language-bash"},[t("pip "),e("span",{class:"token function"},"install"),t(),e("span",{class:"token assign-left variable"},"d2l"),e("span",{class:"token operator"},"=="),e("span",{class:"token number"},"1.0"),t(`.0-alpha0
+`)])])],-1)])),_:1,__:[0]})}}};export{y as date,k as default,_ as meta,b as title,f as type};
