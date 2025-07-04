@@ -24,10 +24,10 @@ import { isDark } from "~/logics";
         <router-link to="/records" class="lt-md:hidden"> Records </router-link>
 
         
-        <!-- <router-link to="/algorithm" title="DS">
-          <span class="lt-md:hidden">Algorithm</span>
+        <router-link to="/notes" title="DS">
+          <span class="lt-md:hidden">Notes</span>
           <ri-ball-pen-line class="md:hidden" />
-        </router-link> -->
+        </router-link>
 
         <a
           href="https://github.com/ZhengKe0110"
