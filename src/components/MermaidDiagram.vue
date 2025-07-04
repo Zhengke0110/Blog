@@ -6,6 +6,7 @@
 
 <script setup lang="ts">
 import { isDark } from '~/logics'
+import mermaid from 'mermaid'
 
 const props = defineProps<{
     code: string
@@ -15,8 +16,6 @@ const mermaidRef = ref<HTMLDivElement>()
 
 const renderMermaid = async () => {
     if (!mermaidRef.value) return
-
-    const { default: mermaid } = await import('mermaid')
 
     mermaid.initialize({
         theme: isDark.value ? 'dark' : 'default',
