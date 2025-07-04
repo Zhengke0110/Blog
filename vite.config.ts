@@ -47,6 +47,7 @@ const config: UserConfig = {
       '@vueuse/core',
       'dayjs',
       'dayjs/plugin/localizedFormat',
+      'mermaid',
     ],
   },
   plugins: [

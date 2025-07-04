@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { formatDate } from "~/logics";
+import MermaidDiagram from './MermaidDiagram.vue'
 
 defineProps({
   frontmatter: {
@@ -50,19 +51,41 @@ onMounted(() => {
     }
   };
 
+
+  // 处理 Mermaid 图表
+  const processMermaidBlocks = () => {
+    if (!content.value) return
+
+    const mermaidBlocks = content.value.querySelectorAll('pre code.language-mermaid')
+    mermaidBlocks.forEach((block) => {
+      const code = block.textContent || ''
+      const pre = block.parentElement
+      if (pre) {
+        const wrapper = document.createElement('div')
+        wrapper.className = 'mermaid-wrapper'
+        pre.parentNode?.replaceChild(wrapper, pre)
+
+        // 使用 Vue 组件替换
+        const app = createApp(MermaidDiagram, { code })
+        app.mount(wrapper)
+      }
+    })
+  }
+
   useEventListener(window, "hashchange", navigate);
   useEventListener(content.value!, "click", handleAnchors, { passive: false });
 
   navigate();
+  // 在导航逻辑后处理 Mermaid
+  nextTick(() => {
+    processMermaidBlocks()
+  })
   setTimeout(navigate, 500);
 });
 </script>
 
 <template>
-  <div
-    v-if="frontmatter.display ?? frontmatter.title"
-    class="prose m-auto mb-8"
-  >
+  <div v-if="frontmatter.display ?? frontmatter.title" class="prose m-auto mb-8">
     <h1 class="mb-0">
       {{ frontmatter.display ?? frontmatter.title }}
     </h1>
@@ -82,8 +105,8 @@ onMounted(() => {
       :to="route.path.split('/').slice(0, -1).join('/') || '/'"
       class="font-mono no-underline opacity-50 hover:opacity-75"
     > -->
-    <a @click="router.back()" class="font-mono no-underline opacity-50 hover:opacity-75">    cd ..</a>
-  
+    <a @click="router.back()" class="font-mono no-underline opacity-50 hover:opacity-75"> cd ..</a>
+
     <!-- </router-link> -->
     <!--   :to="route.path.split('/').slice(0, -1).join('/') || '/'" -->
   </div>

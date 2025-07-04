@@ -222,3 +222,40 @@ html.dark .katex {
 html.dark .katex .mord {
   color: var(--fg-deep);
 }
+/* Mermaid 图表样式 */
+.mermaid-wrapper {
+  margin: 1.5em 0;
+  text-align: center;
+}
+
+.prose .mermaid-wrapper {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+/* 响应式支持 */
+@media (max-width: 768px) {
+  .mermaid-wrapper svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* 暗色主题适配 */
+html.dark .mermaid-wrapper svg {
+  filter: brightness(0.9);
+}
+
+html.dark .mermaid-wrapper .node rect,
+html.dark .mermaid-wrapper .node circle {
+  fill: #2d3748 !important;
+  stroke: #4a5568 !important;
+}
+
+html.dark .mermaid-wrapper .edgePath path {
+  stroke: #718096 !important;
+}
+
+html.dark .mermaid-wrapper .nodeLabel {
+  color: #e2e8f0 !important;
+}

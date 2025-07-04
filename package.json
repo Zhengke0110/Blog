@@ -16,6 +16,7 @@
     "dayjs": "^1.10.7",
     "katex": "^0.16.22",
     "markdown-it-katex": "^2.0.3",
+    "mermaid": "^11.8.0",
     "nprogress": "^0.2.0",
     "prism-theme-vars": "^0.2.2",
     "vue": "^3.2.31",
