@@ -20,8 +20,9 @@ const renderMermaid = async () => {
     if (typeof window === 'undefined') return
     
     try {
-        // 动态导入 mermaid 以避免 SSR 问题
-        const { default: mermaid } = await import('mermaid')
+        // 动态导入 mermaid
+        const mermaidModule = await import('mermaid')
+        const mermaid = mermaidModule.default
         
         mermaid.initialize({
             theme: isDark.value ? 'dark' : 'default',
@@ -42,8 +43,23 @@ const renderMermaid = async () => {
     }
 }
 
-onMounted(renderMermaid)
-watch(isDark, renderMermaid)
+// 只在客户端挂载后执行
+onMounted(() => {
+    // 确保在客户端环境
+    if (typeof window !== 'undefined') {
+        // 使用 requestAnimationFrame 确保 DOM 完全准备好
+        requestAnimationFrame(() => {
+            renderMermaid()
+        })
+    }
+})
+
+// 监听主题变化
+watch(isDark, () => {
+    if (typeof window !== 'undefined') {
+        renderMermaid()
+    }
+})
 </script>
 
 <style scoped>
