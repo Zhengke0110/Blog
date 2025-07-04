@@ -16,7 +16,6 @@
     "dayjs": "^1.10.7",
     "markdown-it-mathjax3": "^4.3.2",
     "mathjax-full": "^3.2.2",
-    "mermaid": "^11.8.0",
     "nprogress": "^0.2.0",
     "prism-theme-vars": "^0.2.2",
     "vue": "^3.2.31",

@@ -52,6 +52,9 @@ const config: UserConfig = {
       'dayjs',
       'dayjs/plugin/localizedFormat',
     ],
+    exclude: [
+      'mermaid'
+    ]
   },
   plugins: [
     Unocss({
