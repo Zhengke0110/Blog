@@ -1,6 +1,11 @@
 <template>
     <div class="mermaid-container">
-        <div ref="mermaidRef" class="mermaid-diagram"></div>
+        <ClientOnly>
+            <div ref="mermaidRef" class="mermaid-diagram"></div>
+            <template #fallback>
+                <pre class="mermaid-loading">{{ code }}</pre>
+            </template>
+        </ClientOnly>
     </div>
 </template>
 
@@ -15,9 +20,6 @@ const mermaidRef = ref<HTMLDivElement>()
 
 const renderMermaid = async () => {
     if (!mermaidRef.value) return
-    
-    // 在 SSR 环境中跳过渲染
-    if (typeof window === 'undefined') return
     
     try {
         // 动态导入 mermaid
@@ -43,23 +45,13 @@ const renderMermaid = async () => {
     }
 }
 
-// 只在客户端挂载后执行
 onMounted(() => {
-    // 确保在客户端环境
-    if (typeof window !== 'undefined') {
-        // 使用 requestAnimationFrame 确保 DOM 完全准备好
-        requestAnimationFrame(() => {
-            renderMermaid()
-        })
-    }
+    nextTick(() => {
+        renderMermaid()
+    })
 })
 
-// 监听主题变化
-watch(isDark, () => {
-    if (typeof window !== 'undefined') {
-        renderMermaid()
-    }
-})
+watch(isDark, renderMermaid)
 </script>
 
 <style scoped>
@@ -73,11 +65,23 @@ watch(isDark, () => {
     height: auto;
 }
 
-.mermaid-error {
-    color: #cc0000;
+.mermaid-error,
+.mermaid-loading {
+    color: #666;
     background: #f5f5f5;
     padding: 1em;
     border-radius: 4px;
     text-align: left;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+.mermaid-error {
+    color: #cc0000;
+}
+
+.mermaid-loading {
+    color: #666;
+    border-left: 3px solid #ccc;
 }
 </style>
