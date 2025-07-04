@@ -191,37 +191,50 @@ h6:focus .header-anchor {
   padding-left: 0.8rem;
 }
 
-/* KaTeX 样式定制 */
-.katex {
-  font-size: 1em;
+/* MathJax 数学公式样式 */
+.prose .MathJax {
+  font-size: inherit !important;
+  color: inherit !important;
 }
 
-.katex-display {
-  margin: 1em 0;
-  text-align: center;
+.prose .MathJax_Display {
+  margin: 1.5em 0 !important;
+  text-align: center !important;
 }
 
-.katex-display > .katex {
-  text-align: center;
-  white-space: nowrap;
+.prose .MathJax svg {
+  max-width: 100% !important;
+  height: auto !important;
 }
 
-/* 响应式设计 */
+/* 行内数学公式 */
+.prose .MathJax[style*="display: inline"] {
+  margin: 0 0.1em !important;
+  vertical-align: baseline !important;
+}
+
+/* 深色模式下的数学公式 */
+html.dark .prose .MathJax {
+  color: #ddd !important;
+}
+
+html.dark .prose .MathJax svg {
+  color: #ddd !important;
+}
+
+html.dark .prose .MathJax svg * {
+  fill: #ddd !important;
+  stroke: #ddd !important;
+}
+
+/* 响应式支持 */
 @media (max-width: 768px) {
-  .katex-display > .katex {
-    font-size: 0.9em;
-    white-space: normal;
+  .prose .MathJax_Display {
+    font-size: 0.9em !important;
+    margin: 1.2em 0 !important;
   }
 }
 
-/* 暗色主题适配 */
-html.dark .katex {
-  color: var(--fg);
-}
-
-html.dark .katex .mord {
-  color: var(--fg-deep);
-}
 /* Mermaid 图表样式 */
 .mermaid-wrapper {
   margin: 1.5em 0;

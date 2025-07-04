@@ -1,0 +1,60 @@
+/* MathJax 样式配置 */
+
+/* 确保 MathJax 容器正确继承样式 */
+.prose mjx-container {
+  margin: 0 0.2em !important;
+  display: inline-block !important;
+}
+
+.prose mjx-container[display="true"] {
+  display: block !important;
+  margin: 1.5em auto !important;
+  text-align: center !important;
+}
+
+/* 行内公式垂直对齐 */
+.prose mjx-container[display="false"] {
+  vertical-align: -0.1em !important;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .prose mjx-container[display="true"] {
+    font-size: 0.9em !important;
+    margin: 1.2em auto !important;
+  }
+}
+
+/* 超小屏幕的公式调整 */
+@media (max-width: 480px) {
+  .prose mjx-container[display="true"] {
+    font-size: 0.8em !important;
+    margin: 1em auto !important;
+  }
+}
+
+/* 深色模式适配 */
+html.dark .prose mjx-container {
+  color: #ddd !important;
+}
+
+html.dark .prose mjx-container svg {
+  color: #ddd !important;
+}
+
+/* 确保公式可见性 */
+.prose mjx-container {
+  opacity: 1 !important;
+  z-index: 1 !important;
+}
+
+/* 辅助功能元素隐藏 */
+.prose mjx-assistive-mml {
+  position: absolute !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden !important;
+}

@@ -3,7 +3,6 @@ import './styles/main.css'
 import './styles/prose.css'
 import './styles/markdown.css'
 import 'uno.css'
-import 'katex/dist/katex.min.css'
 // @ts-expect-error missing types
 import autoRoutes from 'pages-generated'
 import NProgress from 'nprogress'

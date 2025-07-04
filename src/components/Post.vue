@@ -1,6 +1,14 @@
 <script setup lang="ts">
 import { formatDate } from "~/logics";
 import MermaidDiagram from './MermaidDiagram.vue'
+import MathJax from './MathJax.vue'
+
+// 声明 MathJax 类型
+declare global {
+  interface Window {
+    MathJax: any
+  }
+}
 
 defineProps({
   frontmatter: {
@@ -51,7 +59,6 @@ onMounted(() => {
     }
   };
 
-
   // 处理 Mermaid 图表
   const processMermaidBlocks = () => {
     if (!content.value) return
@@ -72,14 +79,34 @@ onMounted(() => {
     })
   }
 
+  // 处理 MathJax 渲染
+  const renderMathJax = async () => {
+    await nextTick()
+    // 检查 MathJax 是否可用
+    if (typeof window !== 'undefined' && 
+        window.MathJax && 
+        window.MathJax.typesetPromise && 
+        content.value) {
+      try {
+        await window.MathJax.typesetPromise([content.value])
+        console.log('Post: MathJax rendering completed')
+      } catch (err) {
+        console.warn('Post: MathJax rendering error:', err)
+      }
+    }
+  }
+
   useEventListener(window, "hashchange", navigate);
   useEventListener(content.value!, "click", handleAnchors, { passive: false });
 
   navigate();
-  // 在导航逻辑后处理 Mermaid
+  
+  // 在导航逻辑后处理 Mermaid 和 MathJax
   nextTick(() => {
     processMermaidBlocks()
+    renderMathJax()
   })
+  
   setTimeout(navigate, 500);
 });
 </script>
@@ -98,7 +125,9 @@ onMounted(() => {
     </p>
   </div>
   <article ref="content">
-    <slot />
+    <MathJax>
+      <slot />
+    </MathJax>
   </article>
   <div v-if="route.path !== '/'" class="prose m-auto mt-8 mb-8">
     <!-- <router-link

@@ -1,9 +1,9 @@
+@import "./mathjax.css";
 :root {
   --c-bg: #fff;
   --c-scrollbar: #eee;
   --c-scrollbar-hover: #bbb;
 }
-
 html {
   background-color: var(--c-bg);
 }

@@ -494,12 +494,3 @@
 .prose-sm > :last-child {
   margin-bottom: 0;
 }
-
-.prose .katex-display {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-}
-
-.prose p .katex {
-  margin: 0 0.2em;
-}

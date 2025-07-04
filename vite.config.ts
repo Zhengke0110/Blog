@@ -18,9 +18,8 @@ import SVG from 'vite-svg-loader'
 import { presetAttributify, presetIcons, presetUno } from 'unocss'
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
+import mathjax3 from 'markdown-it-mathjax3'
 import { slugify } from './scripts/slugify'
-// @ts-expect-error missing types
-import katex from 'markdown-it-katex'
 import 'prismjs/components/prism-regex'
 import 'prismjs/components/prism-javascript'
 import 'prismjs/components/prism-typescript'
@@ -35,6 +34,11 @@ import 'prismjs/components/prism-jsdoc'
 
 const config: UserConfig = {
   base: '/',
+  define: {
+    __VUE_PROD_HYDRATION_MISMATCH_DETAILS__: false,
+    __VUE_OPTIONS_API__: true,
+    __VUE_PROD_DEVTOOLS__: false,
+  },
   resolve: {
     alias: [
       { find: '~/', replacement: `${resolve(__dirname, 'src')}/` },
@@ -73,6 +77,13 @@ const config: UserConfig = {
 
     Vue({
       include: [/\.vue$/, /\.md$/],
+      template: {
+        compilerOptions: {
+          isCustomElement: (tag) => {
+            return tag.startsWith('mjx-') || tag === 'mjx-container' || tag === 'mjx-assistive-mml'
+          }
+        }
+      }
     }),
 
     Pages({
@@ -121,10 +132,38 @@ const config: UserConfig = {
           slugify,
         })
 
-        md.use(katex, {
-          throwOnError: false,
-          errorColor: '#cc0000',
-          strict: false
+        md.use(mathjax3, {
+          tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            packages: ['base', 'ams', 'color', 'newcommand', 'boldsymbol'],
+          },
+          svg: {
+            scale: 1,
+            minScale: 0.5,
+            mtextInheritFont: true,
+            merrorInheritFont: true,
+            mathmlSpacing: false,
+            skipAttributes: {},
+            exFactor: 0.5,
+            displayAlign: 'center',
+            displayIndent: '0',
+          },
+          options: {
+            renderingOptions: {
+              scale: 1,
+              minScale: 0.5,
+              mtextInheritFont: true,
+              merrorInheritFont: true,
+              mathmlSpacing: false,
+              skipAttributes: {},
+              exFactor: 0.5,
+              displayAlign: 'center',
+              displayIndent: '0',
+            },
+          },
         })
       },
     }),
