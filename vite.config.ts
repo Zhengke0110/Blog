@@ -19,7 +19,8 @@ import { presetAttributify, presetIcons, presetUno } from 'unocss'
 // @ts-expect-error missing types
 import TOC from 'markdown-it-table-of-contents'
 import { slugify } from './scripts/slugify'
-
+// @ts-expect-error missing types
+import katex from 'markdown-it-katex'
 import 'prismjs/components/prism-regex'
 import 'prismjs/components/prism-javascript'
 import 'prismjs/components/prism-typescript'
@@ -33,7 +34,7 @@ import 'prismjs/components/prism-javadoc'
 import 'prismjs/components/prism-jsdoc'
 
 const config: UserConfig = {
-  base:'/',
+  base: '/',
   resolve: {
     alias: [
       { find: '~/', replacement: `${resolve(__dirname, 'src')}/` },
@@ -106,7 +107,6 @@ const config: UserConfig = {
           }),
         })
 
-        // @ts-expect-error anyway
         md.use(LinkAttributes, {
           matcher: (link: string) => /^https?:\/\//.test(link),
           attrs: {
@@ -118,6 +118,12 @@ const config: UserConfig = {
         md.use(TOC, {
           includeLevel: [1, 2, 3],
           slugify,
+        })
+
+        md.use(katex, {
+          throwOnError: false,
+          errorColor: '#cc0000',
+          strict: false
         })
       },
     }),

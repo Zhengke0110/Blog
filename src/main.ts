@@ -3,7 +3,8 @@ import './styles/main.css'
 import './styles/prose.css'
 import './styles/markdown.css'
 import 'uno.css'
-
+import 'katex/dist/katex.min.css'
+// @ts-expect-error missing types
 import autoRoutes from 'pages-generated'
 import NProgress from 'nprogress'
 import { ViteSSG } from 'vite-ssg'
@@ -18,7 +19,7 @@ declare module 'vue-router' {
   }
 }
 
-const routes = autoRoutes.map((i) => {
+const routes = autoRoutes.map((i: any) => {
   return {
     ...i,
     alias: i.path.endsWith('/') ? `${i.path}index.html` : `${i.path}.html`,

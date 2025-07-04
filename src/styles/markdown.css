@@ -1,13 +1,13 @@
 /* https://github.com/antfu/prism-theme-vars */
-@import 'prism-theme-vars/base.css';
+@import "prism-theme-vars/base.css";
 
 :root {
   --prism-font-size: 0.9rem;
-  --prism-font-family: 'Fira Code', monospace;
+  --prism-font-family: "Fira Code", monospace;
 }
 
 :root {
-  --prism-font-family: 'Input Mono', monospace;
+  --prism-font-family: "Input Mono", monospace;
 }
 
 html:not(.dark) {
@@ -189,4 +189,36 @@ h6:focus .header-anchor {
 
 .table-of-contents ul > li {
   padding-left: 0.8rem;
+}
+
+/* KaTeX 样式定制 */
+.katex {
+  font-size: 1em;
+}
+
+.katex-display {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.katex-display > .katex {
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .katex-display > .katex {
+    font-size: 0.9em;
+    white-space: normal;
+  }
+}
+
+/* 暗色主题适配 */
+html.dark .katex {
+  color: var(--fg);
+}
+
+html.dark .katex .mord {
+  color: var(--fg-deep);
 }
