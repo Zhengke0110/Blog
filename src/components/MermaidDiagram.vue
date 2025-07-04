@@ -6,7 +6,6 @@
 
 <script setup lang="ts">
 import { isDark } from '~/logics'
-import mermaid from 'mermaid'
 
 const props = defineProps<{
     code: string
@@ -16,19 +15,25 @@ const mermaidRef = ref<HTMLDivElement>()
 
 const renderMermaid = async () => {
     if (!mermaidRef.value) return
-
-    mermaid.initialize({
-        theme: isDark.value ? 'dark' : 'default',
-        startOnLoad: false,
-        fontFamily: 'inherit',
-        themeVariables: {
-            primaryColor: isDark.value ? '#FF9800' : '#3F51B5',
-            primaryTextColor: isDark.value ? '#fff' : '#333',
-            background: isDark.value ? '#1a1a1a' : '#ffffff'
-        }
-    })
-
+    
+    // 在 SSR 环境中跳过渲染
+    if (typeof window === 'undefined') return
+    
     try {
+        // 动态导入 mermaid 以避免 SSR 问题
+        const { default: mermaid } = await import('mermaid')
+        
+        mermaid.initialize({
+            theme: isDark.value ? 'dark' : 'default',
+            startOnLoad: false,
+            fontFamily: 'inherit',
+            themeVariables: {
+                primaryColor: isDark.value ? '#FF9800' : '#3F51B5',
+                primaryTextColor: isDark.value ? '#fff' : '#333',
+                background: isDark.value ? '#1a1a1a' : '#ffffff'
+            }
+        })
+
         const { svg } = await mermaid.render('mermaid-' + Date.now(), props.code)
         mermaidRef.value.innerHTML = svg
     } catch (error) {
