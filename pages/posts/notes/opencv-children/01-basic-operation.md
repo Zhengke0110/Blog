@@ -204,7 +204,7 @@ img_b[:, :, 1] = 0  # G = 0
 img_b[:, :, 2] = 0  # R = 0
 ```
 
-![通道分离示例](/public/images/notes/opencv/lena_img.png)
+![通道分离示例](/images/notes/opencv/lena_img.png)
 
 ## 边界填充
 
@@ -275,7 +275,7 @@ graph LR
   - 默认使用黑色(0)填充，可通过 `value` 参数指定颜色
   - 适用场景: 需要特定背景色时使用
 
-![边界填充示例](/public/images/notes/opencv/图像基本操作_34_0.png)
+![边界填充示例](/images/notes/opencv/图像基本操作_34_0.png)
 
 ## 图像融合与调整
 
@@ -346,7 +346,7 @@ dst2 = cv2.addWeighted(img, 0.5, img_dog, 0.5, 0)  # 各占一半
 dst3 = cv2.addWeighted(img, 0.3, img_dog, 0.7, 0)  # 30% 猫，70% 狗
 ```
 
-![图像融合示例](/public/images/notes/opencv/图像基本操作_47_1.png)
+![图像融合示例](/images/notes/opencv/图像基本操作_47_1.png)
 
 ## 实用技巧与最佳实践
 

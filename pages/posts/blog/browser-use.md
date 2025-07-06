@@ -102,28 +102,28 @@ INFO     [root] Anonymized telemetry enabled. See https://docs.browser-use.com/d
 To create a public link, set `share=True` in `launch()`.
 ```
 
-![运行成功](/public/images/blog/browser-use/success-info.png)
+![运行成功](/images/blog/browser-use/success-info.png)
 
 ## **使用指南**
 
 浏览器输入: http://127.0.0.1:7788/ 看到界面后则代表成功
-![OP1](/public/images/blog/browser-use/op-1.png)
+![OP1](/images/blog/browser-use/op-1.png)
 
 进入[DeepSeek 官网](https://www.deepseek.com/) 点击 API 开发平台, 适当充值后,生成 API 密钥
 
-![OP2](/public/images/blog/browser-use/op-2.png)
-![OP3](/public/images/blog/browser-use/op-3.png)
+![OP2](/images/blog/browser-use/op-2.png)
+![OP3](/images/blog/browser-use/op-3.png)
 在界面上填入 API 密钥即可进行下一步
-![OP4](/public/images/blog/browser-use/op-4.png)
+![OP4](/images/blog/browser-use/op-4.png)
 点击 Run Agent 输入任务的描述信息，随后点击 `Run Agent` 按钮，你可以看到命令行窗口输入了如下内容
-![OP5](/public/images/blog/browser-use/op-5.png)
-![OP6](/public/images/blog/browser-use/op-6.png)
+![OP5](/images/blog/browser-use/op-5.png)
+![OP6](/images/blog/browser-use/op-6.png)
 当出现如下提示时，任务运行成功
-![OP7](/public/images/blog/browser-use/op-7.png)
+![OP7](/images/blog/browser-use/op-7.png)
 
 点击 Results 你可以看到运行结果，效果还是非常不错的，ta 会帮你记录使用过程的录像，你可以随时查看
 
-![OP8](/public/images/blog/browser-use/op-8.png)
+![OP8](/images/blog/browser-use/op-8.png)
 
 ## **常见问题**
 

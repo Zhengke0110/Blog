@@ -8,7 +8,7 @@ type: notes-opencv
 
 光流是描述图像中像素运动的瞬时速度矢量场，基于亮度恒定假设来估计物体运动。光流估计在计算机视觉中具有重要应用，包括目标跟踪、运动分析、视频压缩等。
 
-![光流估计原理](/public/images/notes/opencv/lk_2.png)
+![光流估计原理](/images/notes/opencv/lk_2.png)
 
 ## 流程图
 
@@ -34,7 +34,7 @@ graph LR
     style I fill:#2196F3,stroke:#FFFFFF,stroke-width:3px,color:#FFFFFF
 ```
 
-![光流场示意图](/public/images/notes/opencv/lk_1.png)
+![光流场示意图](/images/notes/opencv/lk_1.png)
 
 ## 光流基本假设
 
@@ -67,7 +67,7 @@ $$I_x u + I_y v + I_t = 0$$
 
 ## Lucas-Kanade 算法
 
-![Lucas-Kanade算法示意](/public/images/notes/opencv/lk_3.png)
+![Lucas-Kanade算法示意](/images/notes/opencv/lk_3.png)
 
 ### 数学推导
 
@@ -109,7 +109,7 @@ $$\begin{bmatrix} u \\ v \end{bmatrix} = \begin{bmatrix} \sum I_x^2 & \sum I_xI_
 - 特征值：$\lambda_1, \lambda_2$
 - 判断条件：$\lambda_2 > \tau$ 且 $\frac{\lambda_1}{\lambda_2} < r$
 
-![Lucas-Kanade结果示例](/public/images/notes/opencv/lk_4.png)
+![Lucas-Kanade结果示例](/images/notes/opencv/lk_4.png)
 
 ## OpenCV 实现
 

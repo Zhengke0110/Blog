@@ -11,7 +11,7 @@ lang: zh
 
 在云图库应用的 Manager Pictures 页面中，某些图片在部署后会无限循环加载。这个问题与默认图片的处理和图片加载错误有关。
 
-![问题描述](/public/images/blog/bug/2025-2-12-error.png)
+![问题描述](/images/blog/bug/2025-2-12-error.png)
 
 ## 分析
 
@@ -214,7 +214,7 @@ onUnmounted(() => {
 
 这些修改解决了无限加载问题，改善了用户体验，并确保了更好的内存管理和错误处理。
 
-![结论](/public/images/blog/bug/2025-2-12-success.png)
+![结论](/images/blog/bug/2025-2-12-success.png)
 
 ## 结论
 

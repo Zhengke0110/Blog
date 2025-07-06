@@ -8,7 +8,7 @@ type: notes-opencv
 
 **随机抽样一致性算法**（Random Sample Consensus）是一种迭代方法，用于从包含离群值的数据中估计数学模型参数。
 
-![RANSAC示意图](/public/images/notes/opencv/ransac_1.png)
+![RANSAC示意图](/images/notes/opencv/ransac_1.png)
 
 RANSAC 算法的核心思想是：
 
@@ -25,7 +25,7 @@ RANSAC 算法的核心思想是：
 4. **内点统计**：统计误差小于阈值的数据点（内点）
 5. **迭代优化**：重复步骤 1-4，选择内点最多的模型
 
-![RANSAC过程](/public/images/notes/opencv/ransac_2.png)
+![RANSAC过程](/images/notes/opencv/ransac_2.png)
 
 ## 数学公式
 
@@ -96,7 +96,7 @@ $$\begin{bmatrix} x' \\ y' \\ 1 \end{bmatrix} = H \begin{bmatrix} x \\ y \\ 1 \e
 其中 $H$ 是 3×3 的单应性矩阵：
 $$H = \begin{bmatrix} h_{11} & h_{12} & h_{13} \\ h_{21} & h_{22} & h_{23} \\ h_{31} & h_{32} & h_{33} \end{bmatrix}$$
 
-![单应性矩阵](/public/images/notes/opencv/ransac_4.png)
+![单应性矩阵](/images/notes/opencv/ransac_4.png)
 
 ### 单应性矩阵的物理意义
 
@@ -166,8 +166,8 @@ import numpy as np
 
 def ransac_homography_demo():
     # 读取图像
-    img1 = cv2.imread('/public/images/notes/opencv/box.png', 0)
-    img2 = cv2.imread('/public/images/notes/opencv/box_in_scene.png', 0)
+    img1 = cv2.imread('/images/notes/opencv/box.png', 0)
+    img2 = cv2.imread('/images/notes/opencv/box_in_scene.png', 0)
 
     # SIFT特征检测
     sift = cv2.xfeatures2d.SIFT_create()
@@ -303,7 +303,7 @@ test_params = [
 ]
 
 for params in test_params:
-    H, mask, ratio = ransac_with_parameters('/public/images/notes/opencv/box.png', '/public/images/notes/opencv/box_in_scene.png', **params)
+    H, mask, ratio = ransac_with_parameters('/images/notes/opencv/box.png', '/images/notes/opencv/box_in_scene.png', **params)
     print(f"参数 {params}: 内点比例 {ratio:.2%}")
     print("-" * 50)
 ```
@@ -383,8 +383,8 @@ def manual_ransac_homography(src_pts, dst_pts, threshold=5.0, max_iterations=100
 # 使用示例
 def test_manual_ransac():
     # 读取图像
-    img1 = cv2.imread('/public/images/notes/opencv/box.png', 0)
-    img2 = cv2.imread('/public/images/notes/opencv/box_in_scene.png', 0)
+    img1 = cv2.imread('/images/notes/opencv/box.png', 0)
+    img2 = cv2.imread('/images/notes/opencv/box_in_scene.png', 0)
 
     # SIFT特征检测
     sift = cv2.xfeatures2d.SIFT_create()
@@ -476,7 +476,7 @@ def image_registration_ransac(img1_path, img2_path):
     return None, None, 0
 
 # 使用示例
-registered, transform_matrix, quality = image_registration_ransac('/public/images/notes/opencv/img1.jpg', '/public/images/notes/opencv/img2.jpg')
+registered, transform_matrix, quality = image_registration_ransac('/images/notes/opencv/img1.jpg', '/images/notes/opencv/img2.jpg')
 if registered is not None:
     cv2.imshow('Registered Image', registered)
     cv2.waitKey(0)
@@ -531,7 +531,7 @@ def plane_detection_ransac(img_path):
     return img
 
 # 使用示例
-result = plane_detection_ransac('/public/images/notes/opencv/building.jpg')
+result = plane_detection_ransac('/images/notes/opencv/building.jpg')
 cv2.imshow('Plane Detection', result)
 cv2.waitKey(0)
 cv2.destroyAllWindows()

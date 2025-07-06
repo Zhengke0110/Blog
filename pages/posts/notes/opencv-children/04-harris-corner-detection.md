@@ -4,7 +4,7 @@ date: 2025-07-02
 type: notes-opencv
 ---
 
-![Harris角点检测示意图](/public/images/notes/opencv/harris_1.png)
+![Harris角点检测示意图](/images/notes/opencv/harris_1.png)
 
 ## 核心原理
 
@@ -14,7 +14,7 @@ Harris 角点检测基于图像的**局部自相关函数**，通过分析像素
 - 是图像中的稳定特征点
 - 对噪声具有一定的鲁棒性
 
-![Harris角点检测原理](/public/images/notes/opencv/harris_2.png)
+![Harris角点检测原理](/images/notes/opencv/harris_2.png)
 
 ## 数学公式
 
@@ -100,7 +100,7 @@ def harris_corner_detection(image_path):
 
     return img
 
-# 使用示例    img_path = '/public/images/notes/opencv/test_1.jpg'
+# 使用示例    img_path = '/images/notes/opencv/test_1.jpg'
 result = harris_corner_detection(img_path)
 if result is not None:
     cv2.imshow('Harris Corners', result)
@@ -199,7 +199,7 @@ def harris_parameter_comparison(image_path):
     plt.show()
 
 # 使用示例
-harris_parameter_comparison('/public/images/notes/opencv/test_1.jpg')
+harris_parameter_comparison('/images/notes/opencv/test_1.jpg')
 ```
 
 ### 改进的 Harris 角点检测
@@ -231,7 +231,7 @@ def enhanced_harris_detection(image_path, threshold_ratio=0.01):
     return result, len(corners[0])
 
 # 使用示例
-result, corner_count = enhanced_harris_detection('/public/images/notes/opencv/test_1.jpg')
+result, corner_count = enhanced_harris_detection('/images/notes/opencv/test_1.jpg')
 if result is not None:
     print(f"检测到 {corner_count} 个角点")
     cv2.imshow('Enhanced Harris Corners', result)
@@ -239,7 +239,7 @@ if result is not None:
     cv2.destroyAllWindows()
 ```
 
-![Harris角点检测参数对比](/public/images/notes/opencv/harris_3.png)
+![Harris角点检测参数对比](/images/notes/opencv/harris_3.png)
 
 ## 优缺点分析
 
@@ -308,7 +308,7 @@ def detect_chessboard_corners(image_path):
     return result
 
 # 使用示例
-result = detect_chessboard_corners('/public/images/notes/opencv/chessboard.jpg')
+result = detect_chessboard_corners('/images/notes/opencv/chessboard.jpg')
 if result is not None:
     cv2.imshow('Chessboard Corners', result)
     cv2.waitKey(0)
@@ -346,14 +346,14 @@ def detect_building_corners(image_path):
     return result
 
 # 使用示例
-result = detect_building_corners('/public/images/notes/opencv/building.jpg')
+result = detect_building_corners('/images/notes/opencv/building.jpg')
 if result is not None:
     cv2.imshow('Building Corners', result)
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 ```
 
-![棋盘格角点检测示例](/public/images/notes/opencv/harris_4.png)
+![棋盘格角点检测示例](/images/notes/opencv/harris_4.png)
 
 ## 实用技巧与最佳实践
 
@@ -407,7 +407,7 @@ def optimized_harris_detection(image_path, **kwargs):
     return result, len(corners[0])
 
 # 使用示例
-result, count = optimized_harris_detection('/public/images/notes/opencv/test_1.jpg',
+result, count = optimized_harris_detection('/images/notes/opencv/test_1.jpg',
                                           threshold_ratio=0.02,
                                           use_clahe=True)
 if result is not None:

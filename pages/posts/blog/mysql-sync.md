@@ -19,7 +19,7 @@ MySQL主从复制的基本原理：
 2. **从库读取binlog**：从库通过I/O线程请求主库的binlog，并将其拷贝到本地的中继日志（relay log）
 3. **从库回放日志**：从库通过SQL线程读取中继日志中的事件，并在本地重放，从而实现数据同步
 
-![MySQL复制原理](/public/images/blog/mysql-sync/replication-diagram.png)
+![MySQL复制原理](/images/blog/mysql-sync/replication-diagram.png)
 
 # 部署主数据库
 
@@ -134,7 +134,7 @@ SHOW MASTER STATUS;
 
 输出结果类似于：
 
-![主数据库状态](/public/images/blog/mysql-sync/master.png)
+![主数据库状态](/images/blog/mysql-sync/master.png)
 
 **重要提示**：记录下 `File` 和 `Position` 的值，配置从库时需要用到。
 
@@ -188,7 +188,7 @@ SHOW SLAVE STATUS\G
 
 正确配置后，`SHOW SLAVE STATUS` 输出中应该能看到：
 
-![从库状态成功](/public/images/blog/mysql-sync/success.png)
+![从库状态成功](/images/blog/mysql-sync/success.png)
 
 确认以下两项状态为Yes表示复制正常运行：
 - `Slave_IO_Running: Yes`

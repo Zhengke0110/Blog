@@ -6,4 +6,4 @@ title: Hello.
   <Plum/>
 </ClientOnly>
 
-![首页](/public/home.jpg)
+![首页](/home.jpg)

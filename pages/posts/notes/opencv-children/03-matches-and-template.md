@@ -165,8 +165,8 @@ def cv_show(name, img):
 def basic_example():
     """基础使用示例"""
     # 读取图像 - OpenCV 4.x 推荐使用完整路径
-    img = cv2.imread('/public/images/notes/opencv/lena.jpg', cv2.IMREAD_COLOR)        # 读取彩色图像
-    gray = cv2.imread('/public/images/notes/opencv/lena.jpg', cv2.IMREAD_GRAYSCALE)   # 读取灰度图像
+    img = cv2.imread('/images/notes/opencv/lena.jpg', cv2.IMREAD_COLOR)        # 读取彩色图像
+    gray = cv2.imread('/images/notes/opencv/lena.jpg', cv2.IMREAD_GRAYSCALE)   # 读取灰度图像
 
     # 检查图像是否成功读取
     if img is None or gray is None:
@@ -187,7 +187,7 @@ def basic_example():
     clahe_img = clahe.apply(gray)
 
     # 模板匹配
-    template = cv2.imread('/public/images/notes/opencv/face.jpg', cv2.IMREAD_GRAYSCALE)
+    template = cv2.imread('/images/notes/opencv/face.jpg', cv2.IMREAD_GRAYSCALE)
     if template is not None:
         res = cv2.matchTemplate(gray, template, cv2.TM_CCOEFF_NORMED)
         min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(res)

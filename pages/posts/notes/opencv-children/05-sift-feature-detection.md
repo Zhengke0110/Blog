@@ -4,7 +4,7 @@ date: 2025-07-02
 type: notes-opencv
 ---
 
-![SIFT特征检测](/public/images/notes/opencv/sift_2.png)
+![SIFT特征检测](/images/notes/opencv/sift_2.png)
 
 ## 核心原理
 
@@ -15,7 +15,7 @@ SIFT（Scale-Invariant Feature Transform，尺度不变特征变换）通过构�
 - **光照不变性**：对光照变化具有鲁棒性
 - **仿射不变性**：对一定程度的仿射变换保持稳定
 
-![尺度空间](/public/images/notes/opencv/sift_3.png)
+![尺度空间](/images/notes/opencv/sift_3.png)
 
 ## 数学公式
 
@@ -75,7 +75,7 @@ graph LR
 
 ### 1. 尺度空间构建
 
-![多分辨率金字塔](/public/images/notes/opencv/sift_4.png)
+![多分辨率金字塔](/images/notes/opencv/sift_4.png)
 
 使用不同 $\sigma$ 值的高斯函数对图像进行多尺度模糊处理，构建图像金字塔。
 
@@ -87,7 +87,7 @@ graph LR
 
 ### 2. DoG 空间极值检测
 
-![DoG金字塔](/public/images/notes/opencv/sift_5.png)
+![DoG金字塔](/images/notes/opencv/sift_5.png)
 
 在 DoG 金字塔中寻找局部极值点。每个像素点需要与其 26 个邻域点进行比较：
 
@@ -95,31 +95,31 @@ graph LR
 - 上层的 9 个邻域点
 - 下层的 9 个邻域点
 
-![极值检测](/public/images/notes/opencv/sift_7.png)
+![极值检测](/images/notes/opencv/sift_7.png)
 
 ### 3. 关键点精确定位
 
-![关键点定位](/public/images/notes/opencv/sift_8.png)
+![关键点定位](/images/notes/opencv/sift_8.png)
 
 使用泰勒展开式精确定位极值点：
 $$D(\mathbf{x}) = D + \frac{\partial D^T}{\partial \mathbf{x}}\mathbf{x} + \frac{1}{2}\mathbf{x}^T\frac{\partial^2 D}{\partial \mathbf{x}^2}\mathbf{x}$$
 
 ### 4. 消除边界响应
 
-![边界响应消除](/public/images/notes/opencv/sift_10.png)
+![边界响应消除](/images/notes/opencv/sift_10.png)
 
 使用 Hessian 矩阵的特征值比值来消除边界响应：
 $$\frac{(r+1)^2}{r} < \frac{(\text{tr}(H))^2}{\det(H)}$$
 
 ### 5. 方向分配
 
-![方向分配](/public/images/notes/opencv/sift_11.png)
+![方向分配](/images/notes/opencv/sift_11.png)
 
 计算关键点的主方向，每个特征点可以得到四个信息：$(x,y,\sigma,\theta)$。
 
 ### 6. 特征描述子生成
 
-![特征描述子](/public/images/notes/opencv/sift_16.png)
+![特征描述子](/images/notes/opencv/sift_16.png)
 
 在关键点周围取 16×16 的窗口，分成 4×4 的子区域，每个子区域计算 8 个方向的梯度直方图。
 
@@ -160,7 +160,7 @@ def sift_feature_detection(image_path):
     return img_with_keypoints, kp, des
 
 # 使用示例
-img_path = '/public/images/notes/opencv/test_1.jpg'
+img_path = '/images/notes/opencv/test_1.jpg'
 result, keypoints, descriptors = sift_feature_detection(img_path)
 if result is not None:
     cv2.imshow('SIFT Features', result)
@@ -277,9 +277,6 @@ def sift_parameter_comparison(image_path):
 
     plt.tight_layout()
     plt.show()
-
-# 使用示例
-sift_parameter_comparison('/public/images/notes/opencv/test_1.jpg')
 ```
 
 ### 改进的 SIFT 特征检测
@@ -345,7 +342,7 @@ def enhanced_sift_detection(image_path, **kwargs):
     return result, kp, des
 
 # 使用示例
-result, kp, des = enhanced_sift_detection('/public/images/notes/opencv/test_1.jpg',
+result, kp, des = enhanced_sift_detection('images/test_1.jpg',
                                          nfeatures=1000,
                                          contrastThreshold=0.03,
                                          use_clahe=True)
@@ -354,9 +351,6 @@ if result is not None:
     cv2.waitKey(0)
     cv2.destroyAllWindows()
 ```
-
-![SIFT参数对比示例](/public/images/notes/opencv/sift_parameter_comparison.png)
-
 ### 实用技巧与最佳实践
 
 #### SIFT 特征检测优化技巧
@@ -416,7 +410,7 @@ def optimized_sift_detection(image_path, **kwargs):
     return result, kp, des
 
 # 使用示例
-result, kp, des = optimized_sift_detection('/public/images/notes/opencv/test_1.jpg',
+result, kp, des = optimized_sift_detection('/images/notes/opencv/test_1.jpg',
                                           nfeatures=1000,
                                           contrastThreshold=0.03,
                                           use_preprocessing=True)
@@ -488,7 +482,7 @@ def evaluate_sift_quality(image_path):
     return quality_metrics
 
 # 使用示例
-metrics = evaluate_sift_quality('/public/images/notes/opencv/test_1.jpg')
+metrics = evaluate_sift_quality('/images/notes/opencv/test_1.jpg')
 ```
 
 ## 常见问题与解决方案
@@ -622,7 +616,7 @@ def batch_sift_processing(image_paths, max_features=500):
     return results
 
 # 使用示例
-image_list = ['/public/images/notes/opencv/img1.jpg', '/public/images/notes/opencv/img2.jpg', '/public/images/notes/opencv/img3.jpg']
+image_list = ['/images/notes/opencv/img1.jpg', '/images/notes/opencv/img2.jpg', '/images/notes/opencv/img3.jpg']
 batch_results = batch_sift_processing(image_list, max_features=300)
 print(f"批量处理完成，共处理 {len(batch_results)} 张图像")
 ```

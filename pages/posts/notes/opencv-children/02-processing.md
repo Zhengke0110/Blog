@@ -20,7 +20,7 @@ HSV 色彩空间:
 - **S (饱和度)**: 颜色纯度/颜色的阴影
 - **V (亮度)**: 颜色的明暗程度
 
-![HSV色彩空间示例](/public/images/notes/opencv/图像处理_6_0.png)
+![HSV色彩空间示例](/images/notes/opencv/图像处理_6_0.png)
 
 ## 阈值处理
 
@@ -180,7 +180,7 @@ $$H(i,j) = \frac{1}{2\pi\sigma^2}e^{-\frac{(i-k)^2+(j-k)^2}{2\sigma^2}}$$
 
 其中 $\sigma$ 是高斯分布的标准差，决定了平滑程度。$\sigma$ 越大，图像越模糊。
 
-![噪声图像](/public/images/notes/opencv/lenaNoise.png)
+![噪声图像](/images/notes/opencv/lenaNoise.png)
 
 ## 形态学操作
 
@@ -456,7 +456,7 @@ laplacian = cv2.Laplacian(img, cv2.CV_64F)
 laplacian = cv2.convertScaleAbs(laplacian)
 ```
 
-![Sobel算子](/public/images/notes/opencv/sobel_1.png)
+![Sobel算子](/images/notes/opencv/sobel_1.png)
 
 ## Canny 边缘检测
 
@@ -542,7 +542,7 @@ magnitude = np.sqrt(sobelx**2 + sobely**2).astype(np.uint8)
 # 3-5. 非极大值抑制、双阈值检测和边缘连接由 cv2.Canny 内部完成
 ```
 
-![Canny边缘检测](/public/images/notes/opencv/canny_2.png)
+![Canny边缘检测](/images/notes/opencv/canny_2.png)
 
 ## 图像金字塔
 
@@ -651,7 +651,7 @@ L1_vis = cv2.convertScaleAbs(L1, alpha=1, beta=127)
 L2_vis = cv2.convertScaleAbs(L2, alpha=1, beta=127)
 ```
 
-![图像金字塔](/public/images/notes/opencv/Pyramid_1.png)
+![图像金字塔](/images/notes/opencv/Pyramid_1.png)
 
 ## 图像轮廓
 
@@ -797,4 +797,4 @@ for i, contour in enumerate(contours):
     print(f"近似后顶点数: {len(approx)}")
 ```
 
-![图像轮廓](/public/images/notes/opencv/contours.png)
+![图像轮廓](/images/notes/opencv/contours.png)

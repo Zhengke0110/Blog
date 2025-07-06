@@ -8,7 +8,7 @@ type: notes-opencv
 
 背景建模是从视频序列中分离前景目标和背景的关键技术，广泛应用于视频监控、目标跟踪和运动分析。
 
-![背景建模示意图](/public/images/notes/opencv/bg_2.png)
+![背景建模示意图](/images/notes/opencv/bg_2.png)
 
 ## 流程图
 
@@ -83,7 +83,7 @@ $$D(x,y) = |I_t(x,y) - I_{t-1}(x,y)|$$
 
 ## 混合高斯模型 (Gaussian Mixture Model)
 
-![混合高斯模型原理](/public/images/notes/opencv/bg_3.png)
+![混合高斯模型原理](/images/notes/opencv/bg_3.png)
 
 ### 数学原理
 
@@ -101,7 +101,7 @@ $$P(X_t) = \sum_{k=1}^{K} \omega_{k,t} \cdot \mathcal{N}(X_t; \mu_{k,t}, \Sigma_
 高斯分布函数定义为：
 $$\mathcal{N}(X; \mu, \Sigma) = \frac{1}{(2\pi)^{d/2}|\Sigma|^{1/2}} \exp\left(-\frac{1}{2}(X-\mu)^T\Sigma^{-1}(X-\mu)\right)$$
 
-![高斯分布示意](/public/images/notes/opencv/bg_4.png)
+![高斯分布示意](/images/notes/opencv/bg_4.png)
 
 ### 参数更新公式
 
@@ -123,7 +123,7 @@ $$|X_t - \mu_{k,t}| < T \cdot \sigma_{k,t}$$
 
 其中 $T$ 通常取 2.5，对应 99.3%的置信区间。
 
-![背景建模结果](/public/images/notes/opencv/bg_5.png)
+![背景建模结果](/images/notes/opencv/bg_5.png)
 
 ### 函数详解
 

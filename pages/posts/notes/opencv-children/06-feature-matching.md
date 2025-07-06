@@ -113,8 +113,8 @@ import matplotlib.pyplot as plt
 
 def feature_matching_demo():
     # 读取图像
-    img1 = cv2.imread('/public/images/notes/opencv/box.png', 0)
-    img2 = cv2.imread('/public/images/notes/opencv/box_in_scene.png', 0)
+    img1 = cv2.imread('/images/notes/opencv/box.png', 0)
+    img2 = cv2.imread('/images/notes/opencv/box_in_scene.png', 0)
 
     # 创建SIFT检测器
     sift = cv2.xfeatures2d.SIFT_create()
@@ -298,7 +298,7 @@ def brute_force_matching(img1_path, img2_path):
     return img_matches, matches
 
 # 使用示例
-result, matches = brute_force_matching('/public/images/notes/opencv/box.png', '/public/images/notes/opencv/box_in_scene.png')
+result, matches = brute_force_matching('/images/notes/opencv/box.png', '/images/notes/opencv/box_in_scene.png')
 cv2.imshow('Brute Force Matches', result)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
@@ -352,7 +352,7 @@ def knn_matching(img1_path, img2_path, ratio_threshold=0.75):
     return img_matches, good_matches, ratio_tests
 
 # 使用示例
-result, good_matches, ratios = knn_matching('/public/images/notes/opencv/box.png', '/public/images/notes/opencv/box_in_scene.png', 0.75)
+result, good_matches, ratios = knn_matching('/images/notes/opencv/box.png', '/images/notes/opencv/box_in_scene.png', 0.75)
 cv2.imshow('KNN Matches', result)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
@@ -458,7 +458,7 @@ def comprehensive_matching_filter(img1_path, img2_path):
     return img_matches, matches
 
 # 使用示例
-result, filtered_matches = comprehensive_matching_filter('/public/images/notes/opencv/box.png', '/public/images/notes/opencv/box_in_scene.png')
+result, filtered_matches = comprehensive_matching_filter('/images/notes/opencv/box.png', '/images/notes/opencv/box_in_scene.png')
 cv2.imshow('Filtered Matches', result)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
@@ -556,8 +556,8 @@ def visualize_matches_with_quality(img1_path, img2_path):
     return result_img
 
 # 使用示例
-color_result = visualize_matches_with_colors('/public/images/notes/opencv/box.png', '/public/images/notes/opencv/box_in_scene.png')
-quality_result = visualize_matches_with_quality('/public/images/notes/opencv/box.png', '/public/images/notes/opencv/box_in_scene.png')
+color_result = visualize_matches_with_colors('/images/notes/opencv/box.png', '/images/notes/opencv/box_in_scene.png')
+quality_result = visualize_matches_with_quality('/images/notes/opencv/box.png', '/images/notes/opencv/box_in_scene.png')
 
 cv2.imshow('Color Matches', color_result)
 cv2.imshow('Quality Matches', quality_result)
@@ -631,6 +631,6 @@ def multi_scale_matching(img1_path, img2_path):
     return len(all_matches)
 
 # 使用示例
-total_matches = multi_scale_matching('/public/images/notes/opencv/box.png', '/public/images/notes/opencv/box_in_scene.png')
+total_matches = multi_scale_matching('/images/notes/opencv/box.png', '/images/notes/opencv/box_in_scene.png')
 print(f"多尺度匹配总数: {total_matches}")
 ```

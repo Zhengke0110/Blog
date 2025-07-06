@@ -5,7 +5,7 @@ display: ''
 
 <SubNav/>
 
-![blog](/public/blog.jpg)
+![blog](/blog.jpg)
 
 <ClientOnly>
   <Plum/>
