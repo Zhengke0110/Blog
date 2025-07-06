@@ -21,41 +21,31 @@ const mermaidRef = ref<HTMLDivElement>()
 const isLoading = ref(true)
 const loadError = ref(false)
 
-// 加载本地 Mermaid 文件
-const loadMermaidScript = (): Promise<void> => {
+// 确保 Mermaid 可用
+const ensureMermaidAvailable = (): Promise<void> => {
     return new Promise((resolve, reject) => {
-        // 如果已经加载过，直接返回
         if (window.mermaid) {
             resolve()
             return
         }
-
-        // 检查是否已经有脚本在加载
-        const existingScript = document.querySelector('script[src="/lib/mermaid.min.js"]')
-        if (existingScript) {
-            existingScript.addEventListener('load', () => resolve())
-            existingScript.addEventListener('error', () => reject(new Error('Failed to load mermaid script')))
-            return
-        }
-
-        // 创建并加载脚本
-        const script = document.createElement('script')
-        script.src = '/lib/mermaid.min.js'
-        script.type = 'text/javascript'
-
-        script.onload = () => {
+        
+        // 等待一小段时间以确保脚本加载完成
+        const checkMermaid = () => {
             if (window.mermaid) {
                 resolve()
             } else {
-                reject(new Error('Mermaid not available after loading'))
+                setTimeout(checkMermaid, 100)
             }
         }
-
-        script.onerror = () => {
-            reject(new Error('Failed to load mermaid script'))
-        }
-
-        document.head.appendChild(script)
+        
+        // 设置超时以防脚本加载失败
+        setTimeout(() => {
+            if (!window.mermaid) {
+                reject(new Error('Mermaid script failed to load'))
+            }
+        }, 5000)
+        
+        checkMermaid()
     })
 }
 
@@ -67,7 +57,7 @@ const renderMermaid = async () => {
         loadError.value = false
 
         // 确保 Mermaid 脚本已加载
-        await loadMermaidScript()
+        await ensureMermaidAvailable()
 
         // 配置 Mermaid
         window.mermaid.initialize({
