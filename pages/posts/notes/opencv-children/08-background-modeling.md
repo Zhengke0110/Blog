@@ -1,6 +1,6 @@
 ---
 title: 背景建模
-date: 2025-07-02
+date: 2025-07-06
 type: notes-opencv
 ---
 
