@@ -29,11 +29,14 @@ const sortedRoutes = computed(() => {
   );
 
   if (props.sortBy === 'filename') {
-    // 按文件名排序
+    // 按文件名排序（自然排序，支持数字顺序）
     return filtered.sort((a, b) => {
       const aFilename = a.path.split('/').pop() || '';
       const bFilename = b.path.split('/').pop() || '';
-      return aFilename.localeCompare(bFilename);
+      return aFilename.localeCompare(bFilename, undefined, {
+        numeric: true,
+        sensitivity: 'base'
+      });
     });
   } else {
     // 默认按日期排序（最新的在前）
