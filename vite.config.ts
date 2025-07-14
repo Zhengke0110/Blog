@@ -204,11 +204,6 @@ const config: UserConfig = {
 
   build: {
     rollupOptions: {
-      external: [
-        // Mark image assets as external to prevent Rollup from trying to bundle them
-        /^\/images\/.*/,
-        /^\/.*\.(png|jpg|jpeg|gif|svg|webp)$/,
-      ],
       onwarn(warning, next) {
         if (warning.code !== 'UNUSED_EXTERNAL_IMPORT')
           next(warning)
