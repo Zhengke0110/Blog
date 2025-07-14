@@ -204,6 +204,10 @@ const config: UserConfig = {
 
   build: {
     rollupOptions: {
+      external: (id) => {
+        // 将所有以 /images/ 开头的路径视为外部资源
+        return id.startsWith('/images/')
+      },
       onwarn(warning, next) {
         if (warning.code !== 'UNUSED_EXTERNAL_IMPORT')
           next(warning)
