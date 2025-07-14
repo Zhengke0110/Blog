@@ -9,7 +9,7 @@ type: notes
 
 ## 传统的 RNN 网络
 
-![传统的RNN](/images/notes/transformer/RNN.PNG)
+![传统的RNN](/images/notes/transformer/rnn.png)
 
 传统的 RNN 计算时有什么问题？
 
