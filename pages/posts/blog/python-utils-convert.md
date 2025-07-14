@@ -1,5 +1,5 @@
 ---
-title: NLP Utils: NER 标注数据转换为 BIO 标注格式
+title: NLP Utils:NER 标注数据转换为 BIO 标注格式
 date: 2025-07-14
 draft: true
 lang: zh
