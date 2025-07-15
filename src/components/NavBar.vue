@@ -4,11 +4,7 @@ import { isDark } from "~/logics";
 
 <template>
   <header class="header z-40">
-    <router-link
-      class="w-10 h-10 absolute lg:fixed m-6 select-none outline-none"
-      to="/"
-      focusable="false"
-    >
+    <router-link class="w-10 h-10 absolute lg:fixed m-6 select-none outline-none" to="/" focusable="false">
       <img v-show="isDark" src="/logo-dark.svg?url" alt="logo" />
       <img v-show="!isDark" src="/logo.svg?url" alt="logo" />
     </router-link>
@@ -19,22 +15,15 @@ import { isDark } from "~/logics";
           <span class="lt-md:hidden">Blog</span>
           <ri-article-line class="md:hidden" />
         </router-link>
-
         <router-link to="/talks" class="lt-md:hidden"> Talks </router-link>
         <router-link to="/records" class="lt-md:hidden"> Records </router-link>
-
-        
-        <router-link to="/notes" title="DS">
+        <router-link to="/projects" class="lt-md:hidden"> Projects </router-link>
+        <router-link to="/notes" title="Notes">
           <span class="lt-md:hidden">Notes</span>
           <ri-ball-pen-line class="md:hidden" />
         </router-link>
 
-        <a
-          href="https://github.com/ZhengKe0110"
-          target="_blank"
-          title="GitHub"
-          class="lt-md:hidden"
-        >
+        <a href="https://github.com/ZhengKe0110" target="_blank" title="GitHub" class="lt-md:hidden">
           <uil-github-alt />
         </a>
         <toggle-theme />
@@ -62,7 +51,7 @@ import { isDark } from "~/logics";
   box-sizing: border-box;
 }
 
-.nav > * {
+.nav>* {
   margin: auto;
 }
 
@@ -90,7 +79,7 @@ import { isDark } from "~/logics";
   grid-auto-flow: column;
 }
 
-.nav .right > * {
+.nav .right>* {
   margin: auto;
 }
 </style>
