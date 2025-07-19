@@ -11,8 +11,11 @@
       <router-link to="/records" class="!border-none !font-400" :class="route.path === '/records' ? '' : inactiveStyle">
         Records
       </router-link>
-            <router-link to="/notes" class="!border-none !font-400" :class="route.path === '/notes' ? '' : inactiveStyle">
+      <router-link to="/notes" class="!border-none !font-400" :class="route.path === '/notes' ? '' : inactiveStyle">
         Notes
+      </router-link>
+      <router-link to="/readings" class="!border-none !font-400" :class="route.path === '/readings' ? '' : inactiveStyle">
+        Readings
       </router-link>
     </div>
   </div>
