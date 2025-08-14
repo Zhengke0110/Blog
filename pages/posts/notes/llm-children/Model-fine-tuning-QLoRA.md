@@ -1,8 +1,7 @@
 ---
 title: QLoRA：量化低秩适应技术
 date: 2025-08-14
-lang: zh
-duration: 20min
+type: notes-llm
 ---
 
 ## 概述

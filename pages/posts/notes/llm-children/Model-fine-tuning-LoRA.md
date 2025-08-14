@@ -1,8 +1,7 @@
 ---
 title: LoRA：低秩适应技术
 date: 2025-08-13
-lang: zh
-duration: 25min
+type: notes-llm
 ---
 
 ## 概述
