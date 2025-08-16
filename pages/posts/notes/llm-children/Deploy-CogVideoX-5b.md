@@ -69,12 +69,12 @@ CogVideoX-5b 是一个拥有 **50 亿参数** 的视频生成模型，采用了�
 
 #### 生成时间参考 (单个视频)
 
-| GPU 型号 | 13 帧模式 | 25 帧模式   | 49 帧模式   |
-| -------- | --------- | ----------- | ----------- |
-| RTX 4090 | ~1-2 分钟 | ~2-3 分钟   | ~4-6 分钟   |
-| RTX 4080 | ~2-3 分钟 | ~3-5 分钟   | ~6-9 分钟   |
-| RTX 4070 | ~3-5 分钟 | ~5-8 分钟   | ~10-15 分钟 |
-| A100     | ~1 分钟   | ~1-2 分钟   | ~2-4 分钟   |
+| GPU 型号 | 13 帧模式 | 25 帧模式 | 49 帧模式   |
+| -------- | --------- | --------- | ----------- |
+| RTX 4090 | ~1-2 分钟 | ~2-3 分钟 | ~4-6 分钟   |
+| RTX 4080 | ~2-3 分钟 | ~3-5 分钟 | ~6-9 分钟   |
+| RTX 4070 | ~3-5 分钟 | ~5-8 分钟 | ~10-15 分钟 |
+| A100     | ~1 分钟   | ~1-2 分钟 | ~2-4 分钟   |
 
 > **提示**: 实际生成时间受提示词复杂度、推理步数等参数影响。首次运行需要额外的模型加载时间。
 
@@ -115,6 +115,7 @@ pip install transformers>=4.44.0
 pip install accelerate>=0.20.0
 pip install imageio-ffmpeg
 pip install safetensors
+pip install sentencepiece
 
 # 安装ModelScope和HuggingFace工具
 pip install modelscope
@@ -136,6 +137,7 @@ pip install opencv-python
 | `torch`           | >=2.0.0  | 深度学习框架         |
 | `imageio-ffmpeg`  | 最新     | 视频文件处理         |
 | `safetensors`     | 最新     | 安全的模型文件格式   |
+| `sentencepiece`   | 最新     | 文本分词器           |
 | `modelscope`      | 最新     | ModelScope 平台工具  |
 | `huggingface_hub` | 最新     | HuggingFace 平台工具 |
 
@@ -147,17 +149,10 @@ python -c "import torch; print('PyTorch:', torch.__version__)"
 python -c "import diffusers; print('Diffusers:', diffusers.__version__)"
 python -c "import transformers; print('Transformers:', transformers.__version__)"
 python -c "import accelerate; print('Accelerate:', accelerate.__version__)"
+python -c "import sentencepiece; print('SentencePiece:', sentencepiece.__version__)"
 ```
 
 ### 3. 下载模型
-
-```bash
-# 创建模型目录
-mkdir -p models
-
-# 进入模型目录
-cd models
-```
 
 #### 方法一：ModelScope 下载（推荐）
 
@@ -166,7 +161,7 @@ cd models
 pip install modelscope
 
 # 下载CogVideoX-5b模型
-modelscope download --model ZhipuAI/CogVideoX-5b --local_dir ./CogVideoX-5b
+modelscope download --model ZhipuAI/CogVideoX-5b --local_dir ./models/CogVideoX-5b
 
 # 验证下载完成
 ls -la ./CogVideoX-5b/
@@ -379,30 +374,30 @@ def generate_video(prompt, output_path="output.mp4",
     try:
         # 加载模型
         print("正在加载模型...")
-        
+
         # 加载调度器
         scheduler = CogVideoXDDIMScheduler.from_pretrained(
-            model_path, 
+            model_path,
             subfolder="scheduler"
         )
-        
+
         # 加载pipeline
         pipe = CogVideoXPipeline.from_pretrained(
             model_path,
             scheduler=scheduler,
             torch_dtype=torch.float16 if device == "cuda" else torch.float32,
         )
-        
+
         # 优化内存使用
         if device == "cuda":
             pipe.enable_model_cpu_offload()
             print("✅ 启用模型CPU卸载")
-            
+
             # 启用VAE切片以节省内存
             if hasattr(pipe.vae, 'enable_slicing'):
                 pipe.vae.enable_slicing()
                 print("✅ 启用VAE切片")
-            
+
             # 启用注意力切片
             if hasattr(pipe, 'enable_attention_slicing'):
                 pipe.enable_attention_slicing()
@@ -422,25 +417,25 @@ def generate_video(prompt, output_path="output.mp4",
         standard_resolutions = {
             "480p": (480, 720),    # 基础分辨率
             "720p": (720, 1280),   # 高清
-            "1080p": (1080, 1920), # 全高清  
+            "1080p": (1080, 1920), # 全高清
         }
-        
+
         # 选择最接近的标准分辨率
         target_ratio = width / height
-        best_res = min(standard_resolutions.values(), 
+        best_res = min(standard_resolutions.values(),
                       key=lambda res: abs(res[1]/res[0] - target_ratio))
-        
+
         final_height, final_width = best_res
         if final_height != height or final_width != width:
             print(f"⚠️ 调整视频尺寸: {height}x{width} -> {final_height}x{final_width}")
             print(f"   (使用CogVideoX支持的标准分辨率)")
-        
+
         # 确保帧数符合模型要求
         if num_frames not in [13, 25, 49]:
             adjusted_frames = min([13, 25, 49], key=lambda x: abs(x - num_frames))
             print(f"⚠️ 调整帧数: {num_frames} -> {adjusted_frames} (模型支持: 13, 25, 49)")
             num_frames = adjusted_frames
-        
+
         # 生成视频
         print("正在生成视频...")
         try:
@@ -524,8 +519,6 @@ if __name__ == "__main__":
 
 ### 6. 使用方法
 
-#### 简化的部署流程
-
 ```bash
 # 第一步：检查环境（包含模型检查）
 python check_environment.py
@@ -552,3 +545,24 @@ python generate_video.py --prompt "一只大熊猫在竹林中吃竹子" --outpu
 | `--seed`     | 可选     | 42         | 随机种子                   | 无       |
 
 > **内存优化提示**：默认参数已调整为低内存模式（13 帧，480x720 分辨率）。如需高质量，可手动设置：`--frames 49 --height 480 --width 720`。
+
+```bash
+# 生成高质量熊猫视频的示例
+python generate_video.py \
+  --prompt "一只大熊猫在竹林中优雅地吃竹子，阳光透过竹叶洒下斑驳的光影，微风轻拂，画面唯美动人" \  # 详细的中文提示词
+  --output "panda_hq_6s.mp4" \          # 输出文件名
+  --frames=49 \                         # 最高质量模式（49帧，6秒视频）
+  --steps=80 \                          # 推理步数（越高质量越好，但耗时更长）
+  --height=720 \                        # 视频高度（720p高清）
+  --width=1280 \                        # 视频宽度（16:9宽屏比例）
+  --guidance=7.5 \                      # 引导尺度（控制与提示词的贴合度）
+  --seed=123                            # 随机种子（确保结果可复现）
+
+# 注意：此配置需要大显存GPU（建议32GB+）和较长生成时间（10-20分钟）
+```
+
+执行过程如图
+![执行过程](/images/notes/llm/Deploy-CogVideoX-5b/success.png)
+
+执行结果如下
+![结果](/images/notes/llm/Deploy-CogVideoX-5b/panda_hq_6s-0001.png)
