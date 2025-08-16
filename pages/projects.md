@@ -1,4 +1,4 @@
----
+<!-- ---
 title: Projects
 display: Projects
 subtitle: List of projects that I am proud of
@@ -23,4 +23,4 @@ projects:
 #       icon: "i-carbon-document"
 ---
 
-<ListProjects :projects="frontmatter.projects"/>
+<ListProjects :projects="frontmatter.projects"/> -->
