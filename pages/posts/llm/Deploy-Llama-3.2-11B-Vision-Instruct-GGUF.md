@@ -1,7 +1,7 @@
 ---
 title: 部署：使用 Ollama 部署 Llama-3.2-11B-Vision-Instruct-GGUF 实现视觉问答
 date: 2025-08-16
-type: notes-llm
+type: llm
 ---
 
 Llama-3.2-11B-Vision-Instruct-GGUF 是 Meta Llama 3.2 多模态模型的 GGUF 量化版本，通过 Ollama 可以实现高效的本地部署和视觉问答功能。GGUF 格式具有更小的模型体积、更快的加载速度和更低的内存占用，非常适合在资源受限的环境中运行多模态大语言模型。

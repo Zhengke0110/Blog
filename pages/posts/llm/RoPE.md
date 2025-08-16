@@ -1,7 +1,7 @@
 ﻿---
 title: 旋转位置编码 (RoPE)
 date: 2025-07-26
-type: notes-llm
+type: llm
 ---
 
 

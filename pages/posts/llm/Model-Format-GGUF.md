@@ -1,7 +1,7 @@
 ---
 title: GGUF：新一代模型格式
 date: 2025-08-14
-type: notes-llm
+type: llm
 ---
 
 ## 概述

@@ -1,7 +1,7 @@
 ---
 title: LLaMA Factory：高效的大语言模型微调框架
 date: 2025-08-14
-type: notes-llm
+type: llm
 ---
 
 ## 概述

@@ -1,7 +1,7 @@
 ---
 title: 训练优化技术：混合精度训练（Mixed Precision Training）
 date: 2025-08-10
-type: notes-llm
+type: llm
 ---
 
 ## 混合精度训练概述

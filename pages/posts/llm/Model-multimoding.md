@@ -1,7 +1,7 @@
 ---
 title: 多模态学习（Multimodal Learning）
 date: 2025-08-14
-type: notes-llm
+type: llm
 ---
 
 ## 概述

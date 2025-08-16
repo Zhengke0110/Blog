@@ -1,7 +1,7 @@
 ---
 title: QLoRA：量化低秩适应技术
 date: 2025-08-14
-type: notes-llm
+type: llm
 ---
 
 ## 概述

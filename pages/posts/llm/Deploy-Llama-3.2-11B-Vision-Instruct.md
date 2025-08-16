@@ -1,7 +1,7 @@
 ---
 title: 部署：多模态大语言模型 Llama-3.2-11B-Vision-Instruct 源码部署
 date: 2025-08-16
-type: notes-llm
+type: llm
 ---
 
 Llama-3.2-11B-Vision-Instruct 是 Meta 发布的开源多模态大语言模型，基于 Llama 3.2 架构，具备强大的图像理解和文本生成能力。该模型支持同时处理图像和文本输入，能够进行图像描述、视觉问答、图文理解等多种任务。本文档详细介绍如何从 ModelScope 进行本地化部署和配置优化。
