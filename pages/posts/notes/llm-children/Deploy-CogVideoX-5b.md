@@ -129,8 +129,6 @@ pip install sentencepiece
 | `safetensors`    | 最新     | 安全的模型文件格式 |
 | `sentencepiece`  | 最新     | 文本分词器         |
 
-> **注意**：PyTorch 已在第 1 步中安装，这里只安装其他必需依赖。
-
 #### 验证依赖安装
 
 ```bash
