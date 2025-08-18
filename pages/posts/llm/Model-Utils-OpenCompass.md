@@ -119,7 +119,8 @@ python tools/list_configs.py | grep demo
 - 自动验证数据完整性
 
 ![OpenCompass](/images/notes/llm/Model-Utils-OpenCompass/val_success.png)
-![OpenCompass](public/images/notes/llm/Model-Utils-OpenCompass/val_result.png)
+
+![OpenCompass](/images/notes/llm/Model-Utils-OpenCompass/val_result.png)
 
 ## 与 LMDeploy 集成
 
@@ -206,6 +207,7 @@ python run.py \
 ```
 
 ![LMDeploy](/images/notes/llm/Model-Utils-OpenCompass/val_lmdeploy_success.png)
+
 ![LMDeploy](/images/notes/llm/Model-Utils-OpenCompass/val_lmdeploy_result.png)
 
 ### 2. 数学推理能力评测
