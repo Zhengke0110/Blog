@@ -1,0 +1,1 @@
+import{_ as s}from"./Post.1a0e90ba.js";import{u as r,c as n,w as c,o as m,a as _}from"./app.14978da3.js";const i=[],x={__name:"projects",setup(p,{expose:a}){const t={meta:[]};return a({frontmatter:t}),r({meta:[]}),(f,e)=>{const o=s;return m(),n(o,{frontmatter:t},{default:c(()=>e[0]||(e[0]=[_("div",{class:"prose m-auto"},null,-1)])),_:1,__:[0]})}}};export{x as default,i as meta};
