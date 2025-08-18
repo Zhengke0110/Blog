@@ -264,8 +264,6 @@ print()
 
 ![客户端调用示例](/images/notes/llm/Model-Utils-LMDeploy/client_success.png)
 
----
-
 ## 模型量化部署
 
 ### 1. 4-bit AWQ 量化
@@ -306,17 +304,6 @@ lmdeploy lite auto_awq qwen/Qwen2.5-7B-Instruct --work-dir ./qwen2.5-7b-instruct
 **量化成功标志**：
 
 当看到以下输出时，表示量化成功完成：
-
-```bash
-# 量化过程监控输出示例
-Loading checkpoint shards: 100%|███████████████████| 4/4 [00:34<00:00,  8.67s/it]
-Loading calibrate dataset ...
-Downloading data: 100%|████████████████████| 5.10M/5.10M [03:41<00:00, 23.1kB/s]
-model.layers.0, samples: 128, max gpu memory: 6.71 GB
-...（各层量化进度）...
-model.layers.27.mlp.down_proj weight packed.
-[INFO] [real_accelerator.py:254:get_accelerator] Setting ds_accelerator to cuda
-```
 
 ![量化成功标志](/images/notes/llm/Model-Utils-LMDeploy/quantification_success.png)
 
@@ -362,15 +349,13 @@ print("量化模型回答:", response[0].text)
 **量化验证**：
 
 ```bash
-
-
-# 3. 启动量化模型API服务
+# 启动量化模型API服务
 lmdeploy serve api_server ./qwen2.5-7b-instruct-4bit \
     --backend turbomind \
     --model-format awq \
     --server-port 23333
 
-# 4. 测试API服务（另开终端）
+# 测试API服务（另开终端）
 curl -X POST http://localhost:23333/v1/chat/completions \
   -H "Content-Type: application/json" \
   -d '{
@@ -382,6 +367,7 @@ curl -X POST http://localhost:23333/v1/chat/completions \
 ```
 
 ![验证](/images/notes/llm/Model-Utils-LMDeploy/chat_success.png)
+
 **注意事项**：
 
 - 量化过程需要较长时间，建议使用默认参数
@@ -466,23 +452,3 @@ lmdeploy serve api_server ./qwen2.5-7b-instruct-4bit \
 ## 总结
 
 LMDeploy 作为一个高效的大语言模型部署工具，在 24GB+ 显卡环境下能够很好地支持 Qwen2.5-7B-Instruct 模型的部署和推理。LMDeploy 降低了大语言模型部署的技术门槛，使得开发者可以更容易地将先进的 AI 能力集成到实际应用中，是构建 AI 应用的理想选择。
-
-## 相关资源
-
-### 官方资源
-
-- **GitHub 仓库**：[LMDeploy](https://github.com/InternLM/lmdeploy)
-- **官方文档**：[LMDeploy 文档](https://lmdeploy.readthedocs.io/zh-cn/latest/)
-- **模型列表**：[支持的模型](https://lmdeploy.readthedocs.io/zh-cn/latest/supported_models/supported_models.html)
-
-### 技术参考
-
-- **TurboMind 架构**：[TurboMind 框架](https://lmdeploy.readthedocs.io/zh-cn/latest/inference/turbomind.html)
-- **量化技术**：[AWQ 量化论文](https://arxiv.org/abs/2306.00978)
-- **Qwen 模型**：[Qwen2.5-7B-Instruct](https://www.modelscope.cn/models/qwen/Qwen2.5-7B-Instruct)
-
-### 社区支持
-
-- **问题反馈**：GitHub Issues
-- **技术讨论**：OpenMMLab 社区
-- **更新动态**：关注官方发布
