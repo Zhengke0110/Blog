@@ -102,12 +102,6 @@ python run.py \
 # 查看可用的demo数据集配置
 python tools/list_configs.py | grep demo
 
-# 系统会自动下载以下数据集到 ./data/ 目录：
-# - GSM8K (数学推理)
-# - MATH (数学问题)
-# - CMMLU (中文多任务语言理解)
-# - 其他必要的评测数据集
-
 # 可用的demo数据集配置：
 # - demo_gsm8k_chat_gen: 数学推理（对话模式）
 # - demo_math_chat_gen: 数学问题（对话模式）
@@ -123,6 +117,9 @@ python tools/list_configs.py | grep demo
 - 自动处理数据集格式转换
 - 支持断点续传，网络中断后可继续下载
 - 自动验证数据完整性
+
+![OpenCompass](/images/notes/llm/Model-Utils-OpenCompass/val_success.png)
+![OpenCompass](public/images/notes/llm/Model-Utils-OpenCompass/val_result.png)
 
 ## 与 LMDeploy 集成
 
@@ -207,6 +204,9 @@ python run.py \
     --debug \
     -w outputs/hf_qwen25_eval
 ```
+
+![LMDeploy](/images/notes/llm/Model-Utils-OpenCompass/val_lmdeploy_success.png)
+![LMDeploy](/images/notes/llm/Model-Utils-OpenCompass/val_lmdeploy_result.png)
 
 ### 2. 数学推理能力评测
 
