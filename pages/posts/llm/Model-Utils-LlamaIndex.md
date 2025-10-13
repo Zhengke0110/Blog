@@ -2,6 +2,7 @@
 title: LlamaIndex 学习笔记
 description: LlamaIndex 是一个强大的工具，用于构建和部署由大型语言模型（LLM）驱动的应用程序。本笔记旨在帮助初学者快速了解其核心概念和用法。
 date: 2025-08-19
+type: llm
 ---
 
 ## 1. LlamaIndex 是什么？

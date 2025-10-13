@@ -1,6 +1,6 @@
 ---
 title: Blog - ZK
-display: ''
+display: Blog - ZK
 ---
 
 <SubNav/>
