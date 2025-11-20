@@ -109,3 +109,64 @@ word_freqs: Dict[Tuple[str, ...], int]  # tuple可做字典key
 - 优化后：
   - 每次 merge: O(U × L) = 30 万次操作
   - 总计: O(M × U × L) = 60 亿次操作
+
+## 二次优化
+
+优化前的问题：
+
+- 每次合并后都要重新遍历所有 word_freqs，重新计算所有 pair 的频率
+- 时间复杂度：O(vocab_size × total_words × avg_word_length)
+- 大量重复计算，效率低下
+
+优化后的方案：
+
+- 只在初始化时统计一次所有 pair 频率 -每次合并只更新受影响的词
+- 时间复杂度：O(vocab_size × affected_words × avg_word_length)
+
+预计算 pair 频率表
+
+```python
+# 初始化时一次性统计
+pair_counts = collections.defaultdict(int)
+for word, freq in word_freqs.items():
+    for i in range(len(word) - 1):
+        pair = (word[i], word[i + 1])
+        pair_counts[pair] += freq
+```
+
+```python
+# 找出包含best_pair的词（而不是所有词）
+affected_words = []
+for word, count in word_freqs.items():
+    has_pair = any(word[i:i+2] == best_pair for i in range(len(word) - 1))
+    if has_pair:
+        affected_words.append((word, count))
+```
+
+```python
+# 步骤1: 减去旧词的pair频率
+for i in range(len(word) - 1):
+    pair_counts[old_pair] -= count
+    if pair_counts[old_pair] <= 0:
+        del pair_counts[old_pair]
+
+# 步骤2: 合并best_pair
+new_word = merge_word(word, best_pair, new_token)
+
+# 步骤3: 添加新词的pair频率
+for i in range(len(new_word) - 1):
+    pair_counts[new_pair] += count
+```
+
+```python
+# 优化前：
+has_pair = any(
+    word[i] == best_pair[0] and word[i+1] == best_pair[1]
+    for i in range(len(word) - 1)
+)
+
+# 优化后：
+has_pair = any(word[i:i+2] == best_pair for i in range(len(word) - 1))
+```
+
+![优化](/images/blog/bpe/iShot_2025-11-20_15.51.54.png)
