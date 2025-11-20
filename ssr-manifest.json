@@ -1,0 +1,373 @@
+{
+  "vite/modulepreload-polyfill": [],
+  "node_modules/@unocss/reset/tailwind.css": [],
+  "src/styles/main.css": [],
+  "src/styles/prose.css": [],
+  "src/styles/markdown.css": [],
+  "../../../../../__uno.css": [],
+  "vite/preload-helper": [],
+  "../../../../../@vite-plugin-pages/generated-pages": [],
+  "\u0000commonjsHelpers.js": [],
+  "\u0000/home/runner/work/Blog/Blog/node_modules/nprogress/nprogress.js?commonjs-module": [],
+  "node_modules/nprogress/nprogress.js": [],
+  "node_modules/@vue/shared/dist/shared.esm-bundler.js": [],
+  "node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js": [],
+  "node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js": [],
+  "node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js": [],
+  "node_modules/vue-router/dist/devtools-BLCumUwL.mjs": [],
+  "node_modules/vue-router/dist/vue-router.mjs": [],
+  "node_modules/@vueuse/head/dist/index.mjs": [],
+  "node_modules/vite-ssg/dist/chunks/state.mjs": [],
+  "node_modules/vite-ssg/dist/chunks/ClientOnly.mjs": [],
+  "node_modules/vite-ssg/dist/index.mjs": [],
+  "\u0000/home/runner/work/Blog/Blog/node_modules/dayjs/dayjs.min.js?commonjs-module": [],
+  "node_modules/dayjs/dayjs.min.js": [],
+  "\u0000/home/runner/work/Blog/Blog/node_modules/dayjs/plugin/localizedFormat.js?commonjs-module": [],
+  "node_modules/dayjs/plugin/localizedFormat.js": [],
+  "plugin-vue:export-helper": [],
+  "src/components/Footer.vue": [],
+  "~icons/ri/sun-line": [],
+  "~icons/ri/moon-line": [],
+  "node_modules/@vueuse/shared/index.mjs": [],
+  "node_modules/@vueuse/core/index.mjs": [],
+  "src/logics/index.ts": [],
+  "src/components/ToggleTheme.vue": [],
+  "~icons/uil/github-alt": [],
+  "~icons/ri/ball-pen-line": [],
+  "~icons/ri/article-line": [],
+  "../../../../../logo-dark.svg?url": [],
+  "../../../../../logo.svg?url": [],
+  "src/components/NavBar.vue?vue&type=style&index=0&scoped=true&lang.css": [],
+  "src/components/NavBar.vue": [],
+  "src/App.vue": [],
+  "src/main.ts": [],
+  "index.html": [],
+  "assets/app.038d67a7.js-unocss-hash.css": [],
+  "pages/[...404].md": [
+    "/assets/_...404_.a45d73d3.js"
+  ],
+  "src/components/MermaidDiagram.vue?vue&type=style&index=0&scoped=true&lang.css": [
+    "/assets/Post.dd5dd46a.js",
+    "/assets/Post.63afffbd.css"
+  ],
+  "src/components/MermaidDiagram.vue": [
+    "/assets/Post.dd5dd46a.js",
+    "/assets/Post.63afffbd.css"
+  ],
+  "src/components/MathJax.vue?vue&type=style&index=0&scoped=true&lang.css": [
+    "/assets/Post.dd5dd46a.js",
+    "/assets/Post.63afffbd.css"
+  ],
+  "src/components/MathJax.vue": [
+    "/assets/Post.dd5dd46a.js",
+    "/assets/Post.63afffbd.css"
+  ],
+  "src/components/Post.vue": [
+    "/assets/Post.dd5dd46a.js",
+    "/assets/Post.63afffbd.css"
+  ],
+  "assets/Post.dd5dd46a.js-unocss-hash.css": [
+    "/assets/Post.dd5dd46a.js",
+    "/assets/Post.63afffbd.css"
+  ],
+  "../../../../../home.jpg": [
+    "/assets/index.e983c234.js"
+  ],
+  "pages/index.md": [
+    "/assets/index.e983c234.js"
+  ],
+  "src/components/Plum.vue": [
+    "/assets/Plum.4636a323.js",
+    "/assets/Plum.eacda17b.css"
+  ],
+  "assets/Plum.4636a323.js-unocss-hash.css": [
+    "/assets/Plum.4636a323.js",
+    "/assets/Plum.eacda17b.css"
+  ],
+  "pages/llm.md": [
+    "/assets/llm.ca5dbfc4.js"
+  ],
+  "src/components/AppLink.vue": [
+    "/assets/SubNav.6254b2b9.js",
+    "/assets/SubNav.f275d38c.css"
+  ],
+  "src/components/ListPosts.vue": [
+    "/assets/SubNav.6254b2b9.js",
+    "/assets/SubNav.f275d38c.css"
+  ],
+  "src/components/SubNav.vue": [
+    "/assets/SubNav.6254b2b9.js",
+    "/assets/SubNav.f275d38c.css"
+  ],
+  "assets/SubNav.6254b2b9.js-unocss-hash.css": [
+    "/assets/SubNav.6254b2b9.js",
+    "/assets/SubNav.f275d38c.css"
+  ],
+  "pages/notes.md": [
+    "/assets/notes.43a75b1e.js"
+  ],
+  "pages/projects.md": [
+    "/assets/projects.01f6c3b3.js",
+    "/assets/projects.cc43550e.css"
+  ],
+  "assets/projects.01f6c3b3.js-unocss-hash.css": [
+    "/assets/projects.01f6c3b3.js",
+    "/assets/projects.cc43550e.css"
+  ],
+  "../../../../../blog.jpg": [
+    "/assets/index.f2af60b4.js"
+  ],
+  "pages/posts/index.md": [
+    "/assets/index.f2af60b4.js"
+  ],
+  "../../../../../images/blog/anquan/home.png": [
+    "/assets/anquan-script.94422dc3.js"
+  ],
+  "../../../../../images/blog/anquan/next-1.png": [
+    "/assets/anquan-script.94422dc3.js"
+  ],
+  "../../../../../images/blog/anquan/next-2.png": [
+    "/assets/anquan-script.94422dc3.js"
+  ],
+  "../../../../../images/blog/anquan/special.png": [
+    "/assets/anquan-script.94422dc3.js"
+  ],
+  "../../../../../images/blog/anquan/next-3.png": [
+    "/assets/anquan-script.94422dc3.js"
+  ],
+  "../../../../../images/blog/anquan/problem.png": [
+    "/assets/anquan-script.94422dc3.js"
+  ],
+  "../../../../../images/blog/anquan/problem-2.png": [
+    "/assets/anquan-script.94422dc3.js"
+  ],
+  "pages/posts/blog/anquan-script.md": [
+    "/assets/anquan-script.94422dc3.js"
+  ],
+  "pages/posts/blog/arraytomap.md": [
+    "/assets/arraytomap.32494c02.js"
+  ],
+  "../../../../../images/blog/bpe/iShot_2025-11-20_15.09.21.png": [
+    "/assets/bpe-trainer.0729204c.js"
+  ],
+  "../../../../../images/blog/bpe/iShot_2025-11-20_15.09.27.png": [
+    "/assets/bpe-trainer.0729204c.js"
+  ],
+  "../../../../../images/blog/bpe/iShot_2025-11-20_15.51.54.png": [
+    "/assets/bpe-trainer.0729204c.js"
+  ],
+  "pages/posts/blog/bpe-trainer.md": [
+    "/assets/bpe-trainer.0729204c.js"
+  ],
+  "../../../../../images/blog/bug/2025-2-12-error.png": [
+    "/assets/bug-vue3-Infinite-loading.4c14f085.js",
+    "/assets/bug-vue3-Infinite-loading.91ddcfd7.css"
+  ],
+  "../../../../../images/blog/bug/2025-2-12-success.png": [
+    "/assets/bug-vue3-Infinite-loading.4c14f085.js",
+    "/assets/bug-vue3-Infinite-loading.91ddcfd7.css"
+  ],
+  "pages/posts/blog/bug-vue3-Infinite-loading.md": [
+    "/assets/bug-vue3-Infinite-loading.4c14f085.js",
+    "/assets/bug-vue3-Infinite-loading.91ddcfd7.css"
+  ],
+  "assets/bug-vue3-Infinite-loading.4c14f085.js-unocss-hash.css": [
+    "/assets/bug-vue3-Infinite-loading.4c14f085.js",
+    "/assets/bug-vue3-Infinite-loading.91ddcfd7.css"
+  ],
+  "pages/posts/blog/esm-solution.md": [
+    "/assets/esm-solution.f79a51e8.js"
+  ],
+  "../../../../../images/blog/mysql-sync/replication-diagram.png": [
+    "/assets/mysql-sync.43b2f4d5.js"
+  ],
+  "../../../../../images/blog/mysql-sync/master.png": [
+    "/assets/mysql-sync.43b2f4d5.js"
+  ],
+  "../../../../../images/blog/mysql-sync/success.png": [
+    "/assets/mysql-sync.43b2f4d5.js"
+  ],
+  "pages/posts/blog/mysql-sync.md": [
+    "/assets/mysql-sync.43b2f4d5.js"
+  ],
+  "pages/posts/blog/python-ner.md": [
+    "/assets/python-ner.8bf180a3.js"
+  ],
+  "pages/posts/blog/python-utils-convert.md": [
+    "/assets/python-utils-convert.cdc4170c.js"
+  ],
+  "pages/posts/blog/sharding-jdbc-nacos.md": [
+    "/assets/sharding-jdbc-nacos.996435b3.js",
+    "/assets/sharding-jdbc-nacos.2cc27f68.css"
+  ],
+  "assets/sharding-jdbc-nacos.996435b3.js-unocss-hash.css": [
+    "/assets/sharding-jdbc-nacos.996435b3.js",
+    "/assets/sharding-jdbc-nacos.2cc27f68.css"
+  ],
+  "../../../../../images/notes/llm/Deploy-CogVideoX-5b/download.png": [
+    "/assets/Deploy-CogVideoX-5b.06faee40.js"
+  ],
+  "../../../../../images/notes/llm/Deploy-CogVideoX-5b/success.png": [
+    "/assets/Deploy-CogVideoX-5b.06faee40.js"
+  ],
+  "../../../../../images/notes/llm/Deploy-CogVideoX-5b/output-0002.png": [
+    "/assets/Deploy-CogVideoX-5b.06faee40.js"
+  ],
+  "pages/posts/llm/Deploy-CogVideoX-5b.md": [
+    "/assets/Deploy-CogVideoX-5b.06faee40.js"
+  ],
+  "../../../../../images/notes/llm/Deploy-Llama-3.2-11B-Vision-Instruct-GGUF/env_success.png": [
+    "/assets/Deploy-Llama-3.2-11B-Vision-Instruct-GGUF.8268322c.js"
+  ],
+  "../../../../../images/notes/llm/Deploy-Llama-3.2-11B-Vision-Instruct-GGUF/out_success.png": [
+    "/assets/Deploy-Llama-3.2-11B-Vision-Instruct-GGUF.8268322c.js"
+  ],
+  "pages/posts/llm/Deploy-Llama-3.2-11B-Vision-Instruct-GGUF.md": [
+    "/assets/Deploy-Llama-3.2-11B-Vision-Instruct-GGUF.8268322c.js"
+  ],
+  "../../../../../images/notes/llm/Deploy-Llama-3.2-11B-Vision-Instruct/download_model.png": [
+    "/assets/Deploy-Llama-3.2-11B-Vision-Instruct.58433d0d.js"
+  ],
+  "../../../../../images/notes/llm/Deploy-Llama-3.2-11B-Vision-Instruct/check_env.png": [
+    "/assets/Deploy-Llama-3.2-11B-Vision-Instruct.58433d0d.js"
+  ],
+  "../../../../../images/notes/llm/Deploy-Llama-3.2-11B-Vision-Instruct/output-0002.png": [
+    "/assets/Deploy-Llama-3.2-11B-Vision-Instruct.58433d0d.js"
+  ],
+  "../../../../../images/notes/llm/Deploy-Llama-3.2-11B-Vision-Instruct/success_out.png": [
+    "/assets/Deploy-Llama-3.2-11B-Vision-Instruct.58433d0d.js"
+  ],
+  "../../../../../images/notes/llm/Deploy-Llama-3.2-11B-Vision-Instruct/4e14fecf615b60c6ebf4b42fd2636c38.png": [
+    "/assets/Deploy-Llama-3.2-11B-Vision-Instruct.58433d0d.js"
+  ],
+  "pages/posts/llm/Deploy-Llama-3.2-11B-Vision-Instruct.md": [
+    "/assets/Deploy-Llama-3.2-11B-Vision-Instruct.58433d0d.js"
+  ],
+  "pages/posts/llm/Model-Format-GGUF.md": [
+    "/assets/Model-Format-GGUF.f4fcbe8d.js",
+    "/assets/Model-Format-GGUF.c4ecc021.css"
+  ],
+  "assets/Model-Format-GGUF.f4fcbe8d.js-unocss-hash.css": [
+    "/assets/Model-Format-GGUF.f4fcbe8d.js",
+    "/assets/Model-Format-GGUF.c4ecc021.css"
+  ],
+  "../../../../../images/notes/llm/Model-LLama-Factory/webui_0.png": [
+    "/assets/Model-Utils-LLama-Factory.25e3d3f6.js"
+  ],
+  "../../../../../images/notes/llm/Model-LLama-Factory/e8562063755c3400238149c2217c1559.png": [
+    "/assets/Model-Utils-LLama-Factory.25e3d3f6.js"
+  ],
+  "pages/posts/llm/Model-Utils-LLama-Factory.md": [
+    "/assets/Model-Utils-LLama-Factory.25e3d3f6.js"
+  ],
+  "../../../../../images/notes/llm/Model-Utils-LMDeploy/qwen_success.png": [
+    "/assets/Model-Utils-LMDeploy.00050afe.js"
+  ],
+  "../../../../../images/notes/llm/Model-Utils-LMDeploy/qwen_success2.png": [
+    "/assets/Model-Utils-LMDeploy.00050afe.js"
+  ],
+  "../../../../../images/notes/llm/Model-Utils-LMDeploy/client_success.png": [
+    "/assets/Model-Utils-LMDeploy.00050afe.js"
+  ],
+  "../../../../../images/notes/llm/Model-Utils-LMDeploy/quantification_success.png": [
+    "/assets/Model-Utils-LMDeploy.00050afe.js"
+  ],
+  "../../../../../images/notes/llm/Model-Utils-LMDeploy/out_success.png": [
+    "/assets/Model-Utils-LMDeploy.00050afe.js"
+  ],
+  "../../../../../images/notes/llm/Model-Utils-LMDeploy/chat_success.png": [
+    "/assets/Model-Utils-LMDeploy.00050afe.js"
+  ],
+  "pages/posts/llm/Model-Utils-LMDeploy.md": [
+    "/assets/Model-Utils-LMDeploy.00050afe.js"
+  ],
+  "pages/posts/llm/Model-Utils-LlamaIndex.md": [
+    "/assets/Model-Utils-LlamaIndex.27d3fa64.js"
+  ],
+  "../../../../../images/notes/llm/Model-Utils-OpenCompass/val_success.png": [
+    "/assets/Model-Utils-OpenCompass.0bf9a48d.js"
+  ],
+  "../../../../../images/notes/llm/Model-Utils-OpenCompass/val_result.png": [
+    "/assets/Model-Utils-OpenCompass.0bf9a48d.js"
+  ],
+  "../../../../../images/notes/llm/Model-Utils-OpenCompass/val_lmdeploy_success.png": [
+    "/assets/Model-Utils-OpenCompass.0bf9a48d.js"
+  ],
+  "../../../../../images/notes/llm/Model-Utils-OpenCompass/val_lmdeploy_result.png": [
+    "/assets/Model-Utils-OpenCompass.0bf9a48d.js"
+  ],
+  "pages/posts/llm/Model-Utils-OpenCompass.md": [
+    "/assets/Model-Utils-OpenCompass.0bf9a48d.js"
+  ],
+  "pages/posts/llm/Model-Utils-Xtuner.md": [
+    "/assets/Model-Utils-Xtuner.0bdf7ef0.js"
+  ],
+  "pages/posts/llm/Model-fine-tuning-LoRA.md": [
+    "/assets/Model-fine-tuning-LoRA.1320ec10.js"
+  ],
+  "pages/posts/llm/Model-fine-tuning-QLoRA.md": [
+    "/assets/Model-fine-tuning-QLoRA.7a51d3ba.js"
+  ],
+  "pages/posts/llm/Model-multimoding.md": [
+    "/assets/Model-multimoding.02e5fd5a.js"
+  ],
+  "../../../../../images/notes/llm/mixed-precision/training-iteration.webp": [
+    "/assets/Model-training-optimization-mix.97de22fe.js"
+  ],
+  "pages/posts/llm/Model-training-optimization-mix.md": [
+    "/assets/Model-training-optimization-mix.97de22fe.js"
+  ],
+  "../../../../../images/notes/llm/janus.png": [
+    "/assets/RoPE.9211f5b7.js"
+  ],
+  "../../../../../images/notes/llm/1347893165.png": [
+    "/assets/RoPE.9211f5b7.js"
+  ],
+  "../../../../../images/notes/llm/performer.png": [
+    "/assets/RoPE.9211f5b7.js"
+  ],
+  "../../../../../images/notes/llm/rope-learned-rpe.png": [
+    "/assets/RoPE.9211f5b7.js"
+  ],
+  "../../../../../images/notes/llm/jax-experiments.png": [
+    "/assets/RoPE.9211f5b7.js"
+  ],
+  "pages/posts/llm/RoPE.md": [
+    "/assets/RoPE.9211f5b7.js"
+  ],
+  "pages/posts/notes/docker-cmd.md": [
+    "/assets/docker-cmd.0e3b27ec.js"
+  ],
+  "pages/posts/notes/docker-dify.md": [
+    "/assets/docker-dify.987ed7f6.js"
+  ],
+  "pages/posts/notes/docker-searxng-deploy.md": [
+    "/assets/docker-searxng-deploy.7c683cee.js"
+  ],
+  "pages/posts/notes/java-securitymanager.md": [
+    "/assets/java-securitymanager.bbd174b2.js",
+    "/assets/sharding-jdbc-nacos.2cc27f68.css"
+  ],
+  "assets/java-securitymanager.bbd174b2.js-unocss-hash.css": [
+    "/assets/java-securitymanager.bbd174b2.js",
+    "/assets/sharding-jdbc-nacos.2cc27f68.css"
+  ],
+  "pages/posts/notes/python-doccano.md": [
+    "/assets/python-doccano.e780e8dc.js"
+  ],
+  "pages/posts/notes/python-ollama-use.md": [
+    "/assets/python-ollama-use.56688b56.js"
+  ],
+  "pages/posts/notes/python-transformer-replace.md": [
+    "/assets/python-transformer-replace.a4f0722d.js"
+  ],
+  "pages/posts/notes/springboot-session.md": [
+    "/assets/springboot-session.36418508.js"
+  ],
+  "pages/posts/notes/vite-path.md": [
+    "/assets/vite-path.3d31e7e1.js"
+  ],
+  "pages/posts/notes/vue-router4.md": [
+    "/assets/vue-router4.16baae11.js"
+  ]
+}
